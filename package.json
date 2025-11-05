@@ -11,6 +11,11 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
+    "test:simple": "node server-simple.js",
+    "test:permissions": "node test-permissions.js",
+    "test:mysql": "node server-mysql-test.js",
+    "test:debug": "node server-debug.js",
+    "install:mysql": "npm install mysql2 --save",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
