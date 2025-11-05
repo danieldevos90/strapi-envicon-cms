@@ -4,25 +4,121 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service",
-    "description": "Services offered (Vergunningen, Funderingen, etc.)"
+    "displayName": "Service / Dienst",
+    "description": "Services/Diensten pages with full content (Modulair bouwen, Tijdelijke huisvesting, etc.)"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
     "title": {
       "type": "string",
       "required": true
+    },
+    "category": {
+      "type": "string",
+      "default": "DIENST"
     },
     "description": {
       "type": "text",
       "required": true
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "order": {
       "type": "integer",
       "default": 0
+    },
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroButton1Text": {
+      "type": "string",
+      "default": "Offerte aanvragen"
+    },
+    "heroButton1Url": {
+      "type": "string",
+      "default": "/offerte-aanvragen"
+    },
+    "heroButton2Text": {
+      "type": "string",
+      "default": "Meer info"
+    },
+    "heroButton2Url": {
+      "type": "string",
+      "default": "/adviesgesprek"
+    },
+    "contentBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.text-block"
+    },
+    "advantagesTitle": {
+      "type": "string",
+      "default": "De voordelen"
+    },
+    "advantages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.feature"
+    },
+    "processTitle": {
+      "type": "string",
+      "default": "Onze werkwijze"
+    },
+    "processDescription": {
+      "type": "text"
+    },
+    "processSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.text-block"
+    },
+    "safetyTitle": {
+      "type": "string",
+      "default": "Veiligheid binnen onze projecten"
+    },
+    "safetyContent": {
+      "type": "text"
+    },
+    "faqTitle": {
+      "type": "string",
+      "default": "Veelgestelde vragen"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.text-block"
+    },
+    "ctaTitle": {
+      "type": "string"
+    },
+    "ctaButtonText": {
+      "type": "string",
+      "default": "Neem contact op"
+    },
+    "ctaButtonUrl": {
+      "type": "string",
+      "default": "/contact"
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
     }
   }
 }

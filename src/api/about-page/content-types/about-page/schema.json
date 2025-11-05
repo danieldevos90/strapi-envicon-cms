@@ -1,0 +1,67 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_page",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "Over Ons Page",
+    "description": "Content for the About Us (Over ons) page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Tijdelijke bouw, permanente kwaliteit"
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "teamTitle": {
+      "type": "string",
+      "default": "Het team"
+    },
+    "teamContent": {
+      "type": "text"
+    },
+    "companyTitle": {
+      "type": "string",
+      "default": "Modulair bouwer in Nederland"
+    },
+    "companyContent": {
+      "type": "text"
+    },
+    "certificationsTitle": {
+      "type": "string",
+      "default": "Certificeringen & lidmaatschappen"
+    },
+    "certificationsContent": {
+      "type": "text"
+    },
+    "ctaTitle": {
+      "type": "string",
+      "default": "Op zoek naar een modulair bouwer in Nederland?"
+    },
+    "ctaButtonText": {
+      "type": "string",
+      "default": "Neem contact op"
+    },
+    "ctaButtonUrl": {
+      "type": "string",
+      "default": "/contact"
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Over ons – Envicon – Modulair bouwer"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Als modulair bouwer in Nederland ontwikkelen wij tijdelijke huisvestingsoplossingen."
+    }
+  }
+}
+

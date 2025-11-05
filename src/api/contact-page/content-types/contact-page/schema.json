@@ -1,0 +1,75 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_page",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Content for the Contact page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Neem contact op"
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.feature"
+    },
+    "contactInfoTitle": {
+      "type": "string",
+      "default": "Contactgegevens"
+    },
+    "companyName": {
+      "type": "string",
+      "default": "Envicon"
+    },
+    "phone": {
+      "type": "string",
+      "default": "+31 (0)85 273 67 54"
+    },
+    "email": {
+      "type": "string",
+      "default": "hallo@envicon.nl"
+    },
+    "address": {
+      "type": "string",
+      "default": "De Langeloop 20F, 1742 PB Schagen"
+    },
+    "faqTitle": {
+      "type": "string",
+      "default": "Veelgestelde vragen"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.text-block"
+    },
+    "formTitle": {
+      "type": "string",
+      "default": "Contactformulier"
+    },
+    "formDescription": {
+      "type": "text"
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Neem contact op | Envicon"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Heb je plannen voor tijdelijke bouw? Bel 085 273 67 54 of mail naar hallo@envicon.nl"
+    }
+  }
+}
+

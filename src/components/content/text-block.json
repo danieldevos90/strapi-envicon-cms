@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_text_blocks",
+  "info": {
+    "displayName": "Text Block",
+    "description": "A reusable text block with title and content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

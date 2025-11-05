@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContentTextBlock extends Struct.ComponentSchema {
+  collectionName: 'components_content_text_blocks';
+  info: {
+    description: 'A reusable text block with title and content';
+    displayName: 'Text Block';
+  };
+  attributes: {
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsAbout extends Struct.ComponentSchema {
   collectionName: 'components_sections_abouts';
   info: {
@@ -11,6 +23,23 @@ export interface SectionsAbout extends Struct.ComponentSchema {
     features: Schema.Attribute.Component<'ui.feature', true>;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsArticlesSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_articles_sections';
+  info: {
+    description: 'Articles section titles';
+    displayName: 'Articles Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'NIEUWSBERICHTEN'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Nieuws en projecten'>;
   };
 }
 
@@ -56,6 +85,57 @@ export interface SectionsProcessSection extends Struct.ComponentSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsSectorsSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_sectors_sections';
+  info: {
+    description: 'Sectors section titles';
+    displayName: 'Sectors Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'SECTOREN'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Ontdek maatwerk voor jouw sector'>;
+  };
+}
+
+export interface SectionsServicesSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_services_sections';
+  info: {
+    description: 'Services section titles';
+    displayName: 'Services Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'DIENSTEN'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Volledige ontzorging voor jouw bouwproject'>;
+  };
+}
+
+export interface SectionsSolutionsSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_solutions_sections';
+  info: {
+    description: 'Solutions section titles';
+    displayName: 'Solutions Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'OPLOSSINGEN'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Welke oplossing past bij jouw project?'>;
   };
 }
 
@@ -154,10 +234,15 @@ export interface UiSocialLink extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'content.text-block': ContentTextBlock;
       'sections.about': SectionsAbout;
+      'sections.articles-section': SectionsArticlesSection;
       'sections.contact': SectionsContact;
       'sections.hero': SectionsHero;
       'sections.process-section': SectionsProcessSection;
+      'sections.sectors-section': SectionsSectorsSection;
+      'sections.services-section': SectionsServicesSection;
+      'sections.solutions-section': SectionsSolutionsSection;
       'ui.button': UiButton;
       'ui.contact-method': UiContactMethod;
       'ui.feature': UiFeature;

@@ -1,0 +1,99 @@
+🚀 Starting import to Production Strapi CMS
+📍 Target: https://cms.envicon.nl
+
+🔌 Testing Strapi connection...
+  📡 GET https://cms.envicon.nl/api/homepage
+✅ Strapi is accessible
+
+📖 Reading content.sql...
+✅ Found 11 content sections
+
+📖 Reading articles.sql...
+✅ Found 3 articles
+Error parsing JSON for section footer: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at /Users/danieldevos/Documents/ALT F AWESOME/envicon-website/strapi-cms/import-to-production.js:214:38
+    at Array.forEach (<anonymous>)
+    at importContentData (/Users/danieldevos/Documents/ALT F AWESOME/envicon-website/strapi-cms/import-to-production.js:212:15)
+    at main (/Users/danieldevos/Documents/ALT F AWESOME/envicon-website/strapi-cms/import-to-production.js:437:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+📋 Importing Navigation...
+  📡 PUT https://cms.envicon.nl/api/navigation
+✅ Navigation imported
+
+🔍 Importing SEO Settings...
+  📡 PUT https://cms.envicon.nl/api/envicon-seo-config
+✅ SEO Settings imported
+
+📝 Importing Forms Configuration...
+  📡 PUT https://cms.envicon.nl/api/forms-config
+✅ Forms Configuration imported
+
+🏠 Importing Homepage...
+  📡 PUT https://cms.envicon.nl/api/homepage
+✅ Homepage imported
+
+🏗️  Importing Solutions...
+  📡 POST https://cms.envicon.nl/api/solutions
+  ✅ Demontabel gebouw
+      ⚠️  Note: image (/sport-hall.png) and icon (/eDEMONTABEL 1.svg) need to be uploaded manually
+  📡 POST https://cms.envicon.nl/api/solutions
+  ✅ Overkapping
+      ⚠️  Note: image (/uploads/dc2cd763-038f-4e6a-922a-9813c7d8c7d3.jpg) and icon (/eOVERKAPPINGEN 1.svg) need to be uploaded manually
+  📡 POST https://cms.envicon.nl/api/solutions
+  ✅ Modulaire unit
+      ⚠️  Note: image (/modulaire-unit.jpg) and icon (/eMODULAIRE 1.svg) need to be uploaded manually
+  📡 POST https://cms.envicon.nl/api/solutions
+  ✅ Loods
+      ⚠️  Note: image (/uploads/56030425-da5f-48f2-aea8-c5a9206d35b7-Loods.jpg) and icon (/eLOODSEN 1.svg) need to be uploaded manually
+
+🏭 Importing Sectors...
+  📡 POST https://cms.envicon.nl/api/sectors
+  ✅ Recycling
+  📡 POST https://cms.envicon.nl/api/sectors
+  ✅ Bouw & industrie
+  📡 POST https://cms.envicon.nl/api/sectors
+  ✅ Tijdelijke huisvesting
+
+🔧 Importing Services...
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ Vergunningen & regelgeving
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ Funderingen & Grondwerkzaamheden
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ Terreininrichting
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ Demontabel bouwen
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ E+W installaties
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ Afbouw & turn-key oplevering
+  📡 POST https://cms.envicon.nl/api/services
+  ✅ Project management
+
+📋 Importing Process Steps...
+  📡 POST https://cms.envicon.nl/api/process-steps
+  ✅ Ontwerp
+  📡 POST https://cms.envicon.nl/api/process-steps
+  ✅ Werkvoorbereiding
+  📡 POST https://cms.envicon.nl/api/process-steps
+  ✅ Uitvoering
+  📡 POST https://cms.envicon.nl/api/process-steps
+  ✅ Oplevering
+
+📰 Importing Articles...
+  ❌ Hoogtepunt bereikt in Giessenburg: Unexpected token '\', "[\n  {"type"... is not valid JSON
+  ❌ De bouw is van start: duurzame en demontabele huisvesting in Giessenburg: Unexpected token '\', "[\n  {"type"... is not valid JSON
+  ❌ Gemeente Molenlanden gunt opdracht aan Envicon voor tijdelijke huisvesting Oekraïense vluchtelingen: Unexpected token '\', "[\n  {"type"... is not valid JSON
+
+✅ All data imported successfully!
+
+📋 Summary:
+  - Content sections: 11
+  - Articles: 3
+
+Next steps:
+1. Review the imported content at https://cms.envicon.nl/admin
+2. Publish any draft content
+3. Test the website integration

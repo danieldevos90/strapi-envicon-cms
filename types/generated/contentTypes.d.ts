@@ -430,6 +430,56 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_page';
+  info: {
+    description: 'Content for the About Us (Over ons) page';
+    displayName: 'Over Ons Page';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    certificationsContent: Schema.Attribute.Text;
+    certificationsTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Certificeringen & lidmaatschappen'>;
+    companyContent: Schema.Attribute.Text;
+    companyTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Modulair bouwer in Nederland'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaButtonText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Neem contact op'>;
+    ctaButtonUrl: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/contact'>;
+    ctaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Op zoek naar een modulair bouwer in Nederland?'>;
+    heroDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Tijdelijke bouw, permanente kwaliteit'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Als modulair bouwer in Nederland ontwikkelen wij tijdelijke huisvestingsoplossingen.'>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Over ons \u2013 Envicon \u2013 Modulair bouwer'>;
+    publishedAt: Schema.Attribute.DateTime;
+    teamContent: Schema.Attribute.Text;
+    teamTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Het team'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -458,6 +508,94 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_page';
+  info: {
+    description: 'Content for the Contact page';
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'De Langeloop 20F, 1742 PB Schagen'>;
+    benefits: Schema.Attribute.Component<'ui.feature', true>;
+    companyName: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Envicon'>;
+    contactInfoTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Contactgegevens'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'hallo@envicon.nl'>;
+    faqItems: Schema.Attribute.Component<'content.text-block', true>;
+    faqTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Veelgestelde vragen'>;
+    formDescription: Schema.Attribute.Text;
+    formTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Contactformulier'>;
+    heroDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Neem contact op'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Heb je plannen voor tijdelijke bouw? Bel 085 273 67 54 of mail naar hallo@envicon.nl'>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Neem contact op | Envicon'>;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'+31 (0)85 273 67 54'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEnviconSeoConfigEnviconSeoConfig
+  extends Struct.SingleTypeSchema {
+  collectionName: 'seo_settings';
+  info: {
+    description: 'Global SEO configuration';
+    displayName: 'SEO Settings';
+    pluralName: 'envicon-seo-configs';
+    singularName: 'envicon-seo-config';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    canonicalUrl: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    keywords: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::envicon-seo-config.envicon-seo-config'
+    > &
+      Schema.Attribute.Private;
+    pageDescription: Schema.Attribute.Text;
+    pageTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -529,40 +667,6 @@ export interface ApiFormsConfigFormsConfig extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiGlobalSeoGlobalSeo extends Struct.SingleTypeSchema {
-  collectionName: 'seo_settings';
-  info: {
-    description: 'Global SEO configuration';
-    displayName: 'SEO Settings';
-    pluralName: 'global-seos';
-    singularName: 'global-seo';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    canonicalUrl: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    keywords: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::global-seo.global-seo'
-    > &
-      Schema.Attribute.Private;
-    pageDescription: Schema.Attribute.Text;
-    pageTitle: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -576,6 +680,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Component<'sections.about', false>;
+    articles: Schema.Attribute.Component<'sections.articles-section', false>;
     contact: Schema.Attribute.Component<'sections.contact', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -589,6 +694,9 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     process: Schema.Attribute.Component<'sections.process-section', false>;
     publishedAt: Schema.Attribute.DateTime;
+    sectors: Schema.Attribute.Component<'sections.sectors-section', false>;
+    services: Schema.Attribute.Component<'sections.services-section', false>;
+    solutions: Schema.Attribute.Component<'sections.solutions-section', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -656,10 +764,50 @@ export interface ApiProcessStepProcessStep extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: 'projects';
+  info: {
+    description: 'Portfolio projects with details and images';
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    client: Schema.Attribute.String;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    gallery: Schema.Attribute.Media<'images', true>;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    sector: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    year: Schema.Attribute.String;
+  };
+}
+
 export interface ApiSectorSector extends Struct.CollectionTypeSchema {
   collectionName: 'sectors';
   info: {
-    description: 'Industry sectors (Recycling, Bouw & industrie, Tijdelijke huisvesting)';
+    description: 'Industry sectors with detailed information and features';
     displayName: 'Sector';
     pluralName: 'sectors';
     singularName: 'sector';
@@ -669,6 +817,10 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
   };
   attributes: {
     brochure: Schema.Attribute.Media<'files'>;
+    category: Schema.Attribute.String & Schema.Attribute.DefaultTo<'SECTOR'>;
+    contentLabel: Schema.Attribute.String;
+    contentSubtitle: Schema.Attribute.Text;
+    contentTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -676,6 +828,11 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
     downloadText: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Download brochure'>;
     downloadUrl: Schema.Attribute.String;
+    features: Schema.Attribute.Component<'ui.feature', true>;
+    featuresLabel: Schema.Attribute.String;
+    featuresSubtitle: Schema.Attribute.Text;
+    featuresTitle: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -684,6 +841,16 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    solutions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::solution.solution'
+    >;
+    solutionsBlockNumber: Schema.Attribute.Integer;
+    solutionsDescription: Schema.Attribute.Text;
+    solutionsLabel: Schema.Attribute.String;
+    solutionsTitle: Schema.Attribute.String;
+    textBlocks: Schema.Attribute.Component<'content.text-block', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -694,8 +861,8 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
-    description: 'Services offered (Vergunningen, Funderingen, etc.)';
-    displayName: 'Service';
+    description: 'Services/Diensten pages with full content (Modulair bouwen, Tijdelijke huisvesting, etc.)';
+    displayName: 'Service / Dienst';
     pluralName: 'services';
     singularName: 'service';
   };
@@ -703,18 +870,52 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    advantages: Schema.Attribute.Component<'ui.feature', true>;
+    advantagesTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'De voordelen'>;
+    category: Schema.Attribute.String & Schema.Attribute.DefaultTo<'DIENST'>;
+    contentBlocks: Schema.Attribute.Component<'content.text-block', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctaButtonText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Neem contact op'>;
+    ctaButtonUrl: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/contact'>;
+    ctaTitle: Schema.Attribute.String;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    faqItems: Schema.Attribute.Component<'content.text-block', true>;
+    faqTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Veelgestelde vragen'>;
+    heroButton1Text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Offerte aanvragen'>;
+    heroButton1Url: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/offerte-aanvragen'>;
+    heroButton2Text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Meer info'>;
+    heroButton2Url: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/adviesgesprek'>;
+    heroDescription: Schema.Attribute.Text;
+    heroTitle: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
     > &
       Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text;
+    metaTitle: Schema.Attribute.String;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    processDescription: Schema.Attribute.Text;
+    processSteps: Schema.Attribute.Component<'content.text-block', true>;
+    processTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Onze werkwijze'>;
     publishedAt: Schema.Attribute.DateTime;
+    safetyContent: Schema.Attribute.Text;
+    safetyTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Veiligheid binnen onze projecten'>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1265,13 +1466,16 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::article.article': ApiArticleArticle;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::envicon-seo-config.envicon-seo-config': ApiEnviconSeoConfigEnviconSeoConfig;
       'api::footer.footer': ApiFooterFooter;
       'api::forms-config.forms-config': ApiFormsConfigFormsConfig;
-      'api::global-seo.global-seo': ApiGlobalSeoGlobalSeo;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::process-step.process-step': ApiProcessStepProcessStep;
+      'api::project.project': ApiProjectProject;
       'api::sector.sector': ApiSectorSector;
       'api::service.service': ApiServiceService;
       'api::solution.solution': ApiSolutionSolution;

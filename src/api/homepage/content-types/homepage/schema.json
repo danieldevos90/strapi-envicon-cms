@@ -22,15 +22,35 @@
       "repeatable": false,
       "component": "sections.about"
     },
-    "contact": {
+    "solutions": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.contact"
+      "component": "sections.solutions-section"
+    },
+    "articles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.articles-section"
+    },
+    "sectors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.sectors-section"
     },
     "process": {
       "type": "component",
       "repeatable": false,
       "component": "sections.process-section"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.services-section"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.contact"
     }
   }
 }

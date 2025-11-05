@@ -5,20 +5,35 @@
     "singularName": "sector",
     "pluralName": "sectors",
     "displayName": "Sector",
-    "description": "Industry sectors (Recycling, Bouw & industrie, Tijdelijke huisvesting)"
+    "description": "Industry sectors with detailed information and features"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
     "title": {
       "type": "string",
       "required": true
     },
+    "category": {
+      "type": "string",
+      "default": "SECTOR"
+    },
     "description": {
       "type": "text",
       "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     },
     "downloadUrl": {
       "type": "string"
@@ -36,7 +51,51 @@
     "order": {
       "type": "integer",
       "default": 0
+    },
+    "contentLabel": {
+      "type": "string"
+    },
+    "contentTitle": {
+      "type": "string"
+    },
+    "contentSubtitle": {
+      "type": "text"
+    },
+    "textBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.text-block"
+    },
+    "featuresLabel": {
+      "type": "string"
+    },
+    "featuresTitle": {
+      "type": "string"
+    },
+    "featuresSubtitle": {
+      "type": "text"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.feature"
+    },
+    "solutionsLabel": {
+      "type": "string"
+    },
+    "solutionsTitle": {
+      "type": "string"
+    },
+    "solutionsDescription": {
+      "type": "text"
+    },
+    "solutionsBlockNumber": {
+      "type": "integer"
+    },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
     }
   }
 }
-

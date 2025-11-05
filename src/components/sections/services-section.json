@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_services_sections",
+  "info": {
+    "displayName": "Services Section",
+    "description": "Services section titles"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string",
+      "required": true,
+      "default": "DIENSTEN"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Volledige ontzorging voor jouw bouwproject"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
+

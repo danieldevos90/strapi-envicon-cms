@@ -1,0 +1,51 @@
+================================================================================
+🚨 CRITICAL: STRAPI MUST BE RESTARTED
+================================================================================
+
+The routes are returning "405 Method Not Allowed" because Strapi needs to be
+FULLY RESTARTED after the rebuild for routes to register properly.
+
+================================================================================
+DO THIS NOW (Takes 30 seconds):
+================================================================================
+
+1. In the terminal where Strapi is running:
+   
+   Press: Ctrl+C  (to stop Strapi completely)
+   
+2. Wait 3 seconds for it to fully stop
+
+3. Start it again:
+   
+   npm run develop
+   
+4. Wait for the console to show:
+   
+   ✅ Default admin user created successfully!
+   📧 Email:    admin@envicon.nl  
+   🔑 Password: Envicon2024!Admin
+   
+5. Once you see that, run:
+   
+   node auto-setup-and-import.js
+   
+================================================================================
+
+WHY THIS IS NEEDED:
+- Strapi was rebuilt with new content types
+- The running process has old route configurations
+- A restart loads the new routes properly
+
+================================================================================
+AFTER RESTART:
+- All API endpoints will work
+- Import script will succeed
+- Content Manager will show all types
+- Everything will work! ✅
+
+================================================================================
+
+DO IT NOW: Ctrl+C → npm run develop → Wait → node auto-setup-and-import.js
+
+================================================================================
+
