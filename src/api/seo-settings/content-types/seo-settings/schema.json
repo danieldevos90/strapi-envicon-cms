@@ -2,8 +2,8 @@
   "kind": "singleType",
   "collectionName": "seo_settings",
   "info": {
-    "singularName": "seo-setting",
-    "pluralName": "seo-settings",
+    "singularName": "global-seo",
+    "pluralName": "global-seos",
     "displayName": "SEO Settings",
     "description": "Global SEO configuration"
   },

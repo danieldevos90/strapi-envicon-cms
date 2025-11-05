@@ -116,7 +116,7 @@ async function importData() {
     const [seoRows] = await connection.execute('SELECT data FROM content WHERE section = ?', ['seo']);
     if (seoRows.length > 0) {
       const seoData = JSON.parse(seoRows[0].data);
-      await putToStrapi('/seo-setting', seoData);
+      await putToStrapi('/global-seo', seoData);
       console.log('✅ SEO Settings imported');
     }
 
