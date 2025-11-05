@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "seo_settings",
   "info": {
-    "singularName": "seo-settings",
+    "singularName": "seo-setting",
     "pluralName": "seo-settings",
     "displayName": "SEO Settings",
     "description": "Global SEO configuration"
