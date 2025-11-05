@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "id": {
+    "identifier": {
       "type": "string",
       "required": true
     },

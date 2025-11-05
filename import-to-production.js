@@ -106,7 +106,11 @@ async function importData() {
       const navData = JSON.parse(navRows[0].data);
       await putToStrapi('/navigation', {
         logo: navData.logo,
-        menuItems: navData.menu
+        menuItems: navData.menu.map(item => ({
+          identifier: item.id,
+          title: item.title,
+          href: item.href
+        }))
       });
       console.log('✅ Navigation imported');
     }
