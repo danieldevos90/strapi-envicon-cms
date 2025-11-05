@@ -75,16 +75,21 @@ export default {
       if (publicRole) {
         // Define permissions for public role
         const permissions = {
+          // Collection types
           'api::article': ['find', 'findOne'],
           'api::solution': ['find', 'findOne'],
           'api::sector': ['find', 'findOne'],
           'api::service': ['find', 'findOne'],
           'api::process-step': ['find', 'findOne'],
+          'api::project': ['find', 'findOne'],
+          // Single types
           'api::homepage': ['find'],
           'api::navigation': ['find'],
           'api::footer': ['find'],
           'api::forms-config': ['find'],
           'api::envicon-seo-config': ['find'],
+          'api::about-page': ['find'],
+          'api::contact-page': ['find'],
         };
 
         for (const [apiId, actions] of Object.entries(permissions)) {
