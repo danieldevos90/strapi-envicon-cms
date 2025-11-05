@@ -11,6 +11,7 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
+    "test": "node test-all.js",
     "test:simple": "node server-simple.js",
     "test:permissions": "node test-permissions.js",
     "test:mysql": "node server-mysql-test.js",
