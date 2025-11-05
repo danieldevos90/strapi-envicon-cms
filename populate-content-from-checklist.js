@@ -25,15 +25,15 @@ console.log('===================================\n');
 
 // Content data based on checklist and RTF file
 const contentData = {
-  // Homepage content (already exists, but ensure it's complete)
+  // Homepage content (from RTF file - Blok 1)
   homepage: {
-    heroTitle: "Tijdelijke bouw, permanente kwaliteit",
-    heroSubtitle: "Modulaire bouwoplossingen voor onderwijs, wonen, bouw & industrie en sport",
-    heroDescription: "Envicon levert hoogwaardige modulaire bouwoplossingen voor tijdelijke huisvesting. Van onderwijsgebouwen tot sportfaciliteiten - wij zorgen voor snelle, flexibele en duurzame oplossingen.",
-    heroButton1Text: "Offerte aanvragen",
-    heroButton1Url: "/offerte-aanvragen",
-    heroButton2Text: "Bekijk projecten",
-    heroButton2Url: "/projecten"
+    heroTitle: "Specialist in modulair bouwen",
+    heroSubtitle: "Tijdelijke bouw, permanente kwaliteit",
+    heroDescription: "Envicon ontwikkelt tijdelijke en modulaire gebouwen. Of het nu gaat om extra klaslokalen, kantoorruimtes, tijdelijke woningen of personeelshuisvesting, wij regelen alles van vergunning tot oplevering. Met snelle communicatie en persoonlijke begeleiding zorgen we dat jouw project soepel verloopt.",
+    heroButton1Text: "Meer over modulair bouwen",
+    heroButton1Url: "/diensten/modulair-bouwen",
+    heroButton2Text: "Vraag een adviesgesprek aan",
+    heroButton2Url: "/adviesgesprek"
   },
 
   // Services content (Modulair bouwen & Tijdelijke huisvesting)
@@ -42,34 +42,34 @@ const contentData = {
       slug: "modulair-bouwen",
       title: "Modulair bouwen",
       category: "DIENST",
-      description: "Flexibele en duurzame modulaire bouwoplossingen voor diverse toepassingen",
-      heroTitle: "Modulair bouwen voor elke toepassing",
-      heroDescription: "Ontdek de voordelen van modulair bouwen met Envicon. Onze flexibele bouwsystemen bieden snelle, kosteneffectieve en duurzame oplossingen voor tijdelijke en permanente huisvesting.",
+      description: "Modulair bouwen betekent dat een gebouw wordt opgebouwd uit complete, vooraf geproduceerde modules",
+      heroTitle: "Wat is modulair bouwen?",
+      heroDescription: "Modulair bouwen betekent dat een gebouw wordt opgebouwd uit complete, vooraf geproduceerde modules. De bouwonderdelen worden grotendeels in de fabriek gemaakt en op locatie gemonteerd. Zo ben je verzekerd van een snelle bouwtijd én minimale overlast op de bouwplaats.",
       contentBlocks: [
         {
-          title: "Wat is modulair bouwen?",
-          content: "Modulair bouwen is een innovatieve bouwmethode waarbij gebouwen worden opgebouwd uit vooraf gefabriceerde modules. Deze modules worden in een gecontroleerde omgeving geproduceerd en vervolgens op de bouwlocatie geassembleerd. Dit resulteert in kortere bouwtijden, betere kwaliteitscontrole en meer flexibiliteit in ontwerp en gebruik."
+          title: "Persoonlijk advies over jouw modulair bouwproject",
+          content: "Elk bouwproject is anders, dus kijken we samen naar wat er nodig is. Dankzij onze flexibele bouwsystemen leveren we altijd maatwerk: een bouwoplossing die past bij jouw locatie, planning en wensen. We begeleiden het hele project en doen de volledige coördinatie op de bouwplaats."
         },
         {
-          title: "Voordelen van modulair bouwen",
-          content: "Modulair bouwen biedt talloze voordelen: snellere realisatie, lagere kosten, betere kwaliteit door fabrieksproductie, flexibiliteit in ontwerp, herbruikbaarheid van modules, en een kleinere ecologische voetafdruk. Bovendien kunnen modulaire gebouwen eenvoudig worden uitgebreid, verkleind of verplaatst."
+          title: "Duurzaam en toekomstbestendig",
+          content: "Bij Envicon draait modulair bouwen om een persoonlijke aanpak. Je hebt één vast aanspreekpunt die binnen één werkdag antwoord geeft op jouw vragen. Natuurlijk bouwen we duurzaam en toekomstbestendig. Onze modulaire gebouwen zijn demontabel, energiezuinig en kunnen ontworpen worden volgens de BENG-normen."
         }
       ],
       advantages: [
         {
           icon: "speed",
-          title: "Snelle realisatie",
-          description: "Tot 50% sneller dan traditionele bouw door parallelle productie en montage"
+          title: "Snel gebouwd, minimale overlast",
+          description: "Omdat we de bouwonderdelen grotendeels in de werkplaats voorbereiden, kunnen we op locatie snel en efficiënt werken. Zo beperken we de bouwtijd én de overlast op de bouwplaats."
         },
         {
           icon: "eco",
-          title: "Duurzaam",
-          description: "Herbruikbare modules en minimaal bouwafval voor een groene toekomst"
+          title: "Circulair en toekomstbestendig",
+          description: "Onze bouwsystemen zijn volledig demontabel. De onderdelen kunnen na gebruik makkelijk uit elkaar worden gehaald en worden ingezet bij een ander bouwproject."
         },
         {
           icon: "flexibility",
-          title: "Flexibel",
-          description: "Eenvoudig uit te breiden, aan te passen of te verplaatsen naar nieuwe locaties"
+          title: "Flexibel in ontwerp",
+          description: "We ontwerpen elke modulaire unit of demontabel bouwsysteem precies zoals jij het wilt, passend bij de locatie en het gebruik."
         }
       ],
       metaTitle: "Modulair bouwen | Flexibele bouwoplossingen | Envicon",
@@ -79,34 +79,34 @@ const contentData = {
       slug: "tijdelijke-huisvesting",
       title: "Tijdelijke huisvesting",
       category: "DIENST",
-      description: "Professionele tijdelijke huisvestingsoplossingen voor diverse sectoren",
-      heroTitle: "Tijdelijke huisvesting op maat",
-      heroDescription: "Heeft u snel extra ruimte nodig? Envicon levert complete tijdelijke huisvestingsoplossingen voor onderwijs, zorg, kantoren en industrie. Van enkele weken tot meerdere jaren - wij zorgen voor de perfecte oplossing.",
+      description: "Tijdelijke huisvesting biedt een snelle en flexibele oplossing bij een tijdelijk tekort aan ruimte",
+      heroTitle: "Wat is tijdelijke huisvesting?",
+      heroDescription: "Tijdelijke huisvesting biedt een snelle en flexibele oplossing bij een tijdelijk tekort aan ruimte. Denk bijvoorbeeld aan extra klaslokalen voor leerlingen of flexwoningen voor studenten. Wij ontwikkelen modulaire gebouwen die in korte tijd geplaatst kunnen worden, zonder in te leveren op comfort en kwaliteit.",
       contentBlocks: [
         {
-          title: "Wanneer tijdelijke huisvesting?",
-          content: "Tijdelijke huisvesting is de ideale oplossing bij renovaties, uitbreidingen, calamiteiten of tijdelijke capaciteitsproblemen. Onze modulaire units kunnen binnen enkele dagen operationeel zijn en bieden alle comfort en functionaliteit van permanente gebouwen."
+          title: "Persoonlijk advies over tijdelijke huisvesting",
+          content: "Ineens extra woonruimte of noodlokalen nodig? De vraag naar tijdelijke huisvesting is vaak urgent. Daarom begeleiden we het hele project en doen we de volledige coördinatie op de bouwplaats. Zo ben jij geen tijd kwijt aan het zoeken van geschikte partners en leveranciers."
         },
         {
-          title: "Complete service",
-          content: "Wij verzorgen het complete proces: van ontwerp en vergunningen tot levering, montage en onderhoud. Na gebruik kunnen de modules worden gedemonteerd en hergebruikt, wat zorgt voor een duurzame en kosteneffectieve oplossing."
+          title: "Duurzaam en toekomstbestendig",
+          content: "Bij Envicon hebben we een persoonlijke aanpak. Je hebt altijd één vast aanspreekpunt dat binnen één werkdag reageert. Natuurlijk bouwen we duurzaam en toekomstbestendig. Onze modulaire gebouwen zijn volledig demontabel en energiezuinig."
         }
       ],
       advantages: [
         {
           icon: "speed",
-          title: "Snel operationeel",
-          description: "Binnen enkele dagen tot weken volledig functionele ruimtes"
-        },
-        {
-          icon: "concierge",
-          title: "Zorgeloos",
-          description: "Wij regelen alles: van vergunningen tot onderhoud en demontage"
+          title: "Snel inzetbaar bij urgente huisvestingsvragen",
+          description: "Heb je op korte termijn extra ruimte nodig? We bereiden de bouwonderdelen grotendeels voor in onze eigen werkplaats. Daardoor is de montage op locatie een kwestie van weken in plaats van maanden."
         },
         {
           icon: "eco",
-          title: "Kosteneffectief",
-          description: "Lagere kosten dan nieuwbouw en herbruikbaar voor toekomstige projecten"
+          title: "Verplaatsbaar en herbruikbaar",
+          description: "Onze gebouwen zijn volledig demontabel. Wanneer jij de tijdelijke huisvesting niet meer nodig hebt, verplaatsen we het gebouw snel en eenvoudig naar een andere plek."
+        },
+        {
+          icon: "flexibility",
+          title: "Flexibel in ontwerp",
+          description: "Waar standaard prefab units vaste afmetingen hebben, passen wij elk gebouw volledig aan op jouw wensen en locatie. Ook tijdelijke huisvesting krijgt bij ons de uitstraling van een permanente oplossing."
         }
       ],
       metaTitle: "Tijdelijke huisvesting | Modulaire units | Envicon",
@@ -120,29 +120,39 @@ const contentData = {
       slug: "onderwijs",
       title: "Onderwijs",
       category: "SECTOR",
-      description: "Tijdelijke onderwijshuisvesting voor scholen en onderwijsinstellingen",
+      description: "Een groeiend aantal leerlingen, een verbouwing of tijdelijke verhuizing. Soms heeft jouw school gewoon snel extra ruimte nodig.",
       contentTitle: "Tijdelijke onderwijshuisvesting",
-      contentSubtitle: "Flexibele klaslokalen en onderwijsfaciliteiten",
+      contentSubtitle: "Snel een oplossing voor jouw schoolgebouw",
       textBlocks: [
         {
-          title: "Uitbreiding capaciteit",
-          content: "Bij groeiende leerlingenaantallen of renovaties bieden onze modulaire klaslokalen de perfecte oplossing. Volledig uitgeruste onderwijsruimtes die voldoen aan alle eisen voor modern onderwijs."
+          title: "Tijdelijke onderwijshuisvesting",
+          content: "Een groeiend aantal leerlingen, een verbouwing of tijdelijke verhuizing. Soms heeft jouw school gewoon snel extra ruimte nodig. We bouwen tijdelijke klaslokalen, kantines, gymzalen en complete schoolgebouwen voor kindcentra, basisscholen, middelbare scholen en universiteiten. Onze modulaire units en demontabele bouwsystemen zijn veilig en voelen aan als een permanent schoolgebouw: een plek waar leerlingen prettig kunnen leren."
         },
         {
-          title: "Snel operationeel",
-          content: "Onze onderwijsmodules kunnen binnen enkele weken worden geplaatst en zijn direct klaar voor gebruik. Minimale verstoring van het onderwijsproces gegarandeerd."
+          title: "Snel een oplossing voor jouw schoolgebouw",
+          content: "Als school wil je dat de lessen gewoon door kunnen blijven gaan. Daarom bouwen we snel en met zo min mogelijk overlast. Onze modulaire units en demontabele bouwsystemen zijn eenvoudig aan te passen als het aantal leerlingen verandert. We leveren ze gebruiksklaar op met verlichting, sanitair en garderobes. De tijdelijke gebouwen kunnen wij realiseren volgens het Programma van Eisen Frisse Scholen (klasse B of C)."
         }
       ],
       features: [
         {
           icon: "school",
-          title: "Moderne klaslokalen",
-          description: "Volledig uitgeruste lokalen met moderne voorzieningen en technologie"
+          title: "Flexibel inzetbaar",
+          description: "Onze modulaire gebouwen zijn flexibel inzetbaar: als uitbreiding van een permanent schoolgebouw of dependance."
+        },
+        {
+          icon: "eco",
+          title: "Comfortabel klimaat",
+          description: "Dankzij slimme klimaatbeheersing is de ruimte comfortabel in elk seizoen."
         },
         {
           icon: "safety",
-          title: "Veilig en comfortabel",
-          description: "Voldoet aan alle veiligheidseisen en biedt een prettige leeromgeving"
+          title: "Goede akoestiek",
+          description: "Goede akoestiek zorgt voor rust in de klas en een fijne leeromgeving."
+        },
+        {
+          icon: "concierge",
+          title: "Complete service",
+          description: "We denken verder dan het gebouw, zoals een extra fietsenhok of speeltuin."
         }
       ]
     },
@@ -238,58 +248,58 @@ const contentData = {
     }
   ],
 
-  // About page content
+  // About page content (from RTF file)
   aboutPage: {
     heroTitle: "Tijdelijke bouw, permanente kwaliteit",
-    heroDescription: "Envicon is specialist in modulaire bouwoplossingen. Met jarenlange ervaring leveren wij hoogwaardige tijdelijke huisvesting voor diverse sectoren. Ons team van experts zorgt voor maatwerk oplossingen die perfect aansluiten bij uw behoeften.",
+    heroDescription: "Envicon bouwt sneller en slimmer, zonder in te leveren op kwaliteit. Onze tijdelijke gebouwen zijn net zo comfortabel en gebruiksvriendelijk als permanente huisvesting. We leveren modulaire gebouwen waarin mensen graag werken, leren of sporten én die er ook nog eens goed uitzien. Bij ons ben je in goede handen: van de eerste schets tot en met de oplevering.",
     teamTitle: "Het team",
-    teamContent: "Ons ervaren team bestaat uit Kyle en Steven, beiden experts in modulaire bouw en projectmanagement. Met hun gecombineerde kennis en ervaring zorgen zij ervoor dat elk project succesvol wordt gerealiseerd, van concept tot oplevering.",
+    teamContent: "Envicon is opgericht door Kyle Lambert en Steven Hageman, twee professionals met een hart voor de bouw. Ze zagen dat er tijdens bouwprojecten regelmatig een afstand ontstond tussen opdrachtgever en bouwer, en besloten het anders te doen: persoonlijker, sneller en transparanter. Kyle heeft een achtergrond in projectmanagement en ondernemerschap binnen de installatietechniek. Steven werkt al meer dan tien jaar in de modulaire bouw.",
     companyTitle: "Modulair bouwer in Nederland",
-    companyContent: "Als toonaangevende modulair bouwer in Nederland ontwikkelen wij innovatieve oplossingen voor tijdelijke huisvesting. Onze focus ligt op kwaliteit, flexibiliteit en duurzaamheid. We werken samen met betrouwbare partners en leveranciers om de beste resultaten te garanderen.",
+    companyContent: "Als modulair bouwer werken we door heel Nederland. We ontwikkelen diverse tijdelijke bouwoplossingen: van tijdelijke klaslokalen en flexwoningen tot kantoorruimtes en personeelshuisvesting in de bouw en industrie. Dankzij ons landelijke netwerk kunnen we snel starten en flexibel opschalen, waar jouw bouwproject ook is. De modules voor onze gebouwen worden geproduceerd door onze vaste partners in Nederland.",
     certificationsTitle: "Certificeringen & lidmaatschappen",
-    certificationsContent: "Envicon beschikt over alle benodigde certificeringen en is lid van relevante brancheverenigingen. Dit garandeert dat onze projecten voldoen aan de hoogste kwaliteits- en veiligheidseisen.",
+    certificationsContent: "Op de website plaatsen als de certificaten binnen zijn.",
     ctaTitle: "Op zoek naar een modulair bouwer in Nederland?",
     metaTitle: "Over ons – Envicon – Modulair bouwer",
-    metaDescription: "Als modulair bouwer in Nederland ontwikkelen wij tijdelijke huisvestingsoplossingen. Leer meer over ons team en onze aanpak."
+    metaDescription: "Als modulair bouwer in Nederland ontwikkelen wij tijdelijke huisvestingsoplossingen."
   },
 
-  // Contact page content
+  // Contact page content (from RTF file)
   contactPage: {
     heroTitle: "Neem contact op",
-    heroDescription: "Heeft u plannen voor tijdelijke bouw of modulaire huisvesting? Neem contact met ons op voor een vrijblijvend adviesgesprek. Wij denken graag mee over de beste oplossing voor uw situatie.",
+    heroDescription: "Heb je vragen over tijdelijke huisvesting of een ander modulair bouwproject? Vul het formulier in, dan nemen we binnen 24 uur contact met je op om jouw aanvraag te bespreken. Vervolgens ontvang je een persoonlijke offerte.",
     benefits: [
       {
-        icon: "consultation",
-        title: "Gratis adviesgesprek",
-        description: "Persoonlijk advies over de beste oplossing voor uw situatie"
-      },
-      {
         icon: "speed",
-        title: "Snelle reactie",
-        description: "Binnen 24 uur een reactie op uw aanvraag"
+        title: "Persoonlijke en vrijblijvende offerte binnen één werkdag",
+        description: "We reageren snel en geven je binnen één werkdag een persoonlijke offerte"
       },
       {
-        icon: "expertise",
-        title: "Expertise",
-        description: "Jarenlange ervaring in modulaire bouw en tijdelijke huisvesting"
+        icon: "consultation",
+        title: "Eerlijk en persoonlijk advies",
+        description: "We denken met je mee en geven eerlijk advies over de beste oplossing"
+      },
+      {
+        icon: "transparency",
+        title: "Transparante prijzen",
+        description: "Heldere prijzen zonder verborgen kosten, zodat je weet waar je aan toe bent"
       }
     ],
     faqItems: [
       {
-        title: "Hoe snel kan een modulair gebouw worden geplaatst?",
-        content: "Afhankelijk van de grootte en complexiteit kunnen onze modulaire gebouwen binnen 2-8 weken worden gerealiseerd, van bestelling tot oplevering."
+        title: "Wat heb ik nodig om een offerte aan te vragen?",
+        content: "Een korte omschrijving van jouw bouwproject is voldoende. Denk aan het type gebouw, de gewenste grootte en de locatie. We nemen snel contact met je op om de details samen door te nemen."
       },
       {
-        title: "Zijn modulaire gebouwen geschikt voor langdurig gebruik?",
-        content: "Ja, onze modulaire gebouwen zijn ontworpen voor zowel tijdelijk als langdurig gebruik. Ze voldoen aan alle bouwvoorschriften en kunnen jaren meegaan."
+        title: "Kan ik ook telefonisch overleggen over mijn project?",
+        content: "Zeker, we denken graag met je mee. Je kunt ons bellen tijdens kantooruren of een bericht achterlaten via het formulier, we bellen je dan zo snel mogelijk op."
       },
       {
-        title: "Welke vergunningen zijn nodig?",
-        content: "Wij adviseren over de benodigde vergunningen en kunnen u helpen bij het aanvraagproces. Dit verschilt per gemeente en type gebouw."
+        title: "Werkt Envicon ook voor particuliere klanten?",
+        content: "Nee, we richten ons volledig op zakelijke opdrachtgevers zoals gemeenten, onderwijsinstellingen, sportorganisaties en bedrijven."
       },
       {
-        title: "Kunnen modulaire gebouwen worden aangepast?",
-        content: "Absoluut! Onze modulaire systemen zijn zeer flexibel en kunnen worden aangepast aan uw specifieke wensen en eisen."
+        title: "Kunnen jullie helpen bij de aanvraag van vergunningen of regelgeving?",
+        content: "Ja, dat doen we graag. Envicon regelt de complete vergunningaanvraag voor tijdelijke en modulaire bouw. We leveren alle documenten correct aan en zorgen ervoor dat het proces soepel verloopt. We hebben kennis van de geldende wet- en regelgeving."
       }
     ],
     formTitle: "Contactformulier",
@@ -408,8 +418,16 @@ async function updateSingleType(endpoint, data, name) {
 async function main() {
   try {
     console.log('🔍 Testing API connection...');
-    await makeRequest('/homepage');
-    console.log('✅ API connection successful\n');
+    try {
+      await makeRequest('/homepage');
+      console.log('✅ API connection successful\n');
+    } catch (error) {
+      if (error.message.includes('404')) {
+        console.log('✅ API connection successful (content will be created)\n');
+      } else {
+        throw error;
+      }
+    }
 
     // 1. Update homepage
     console.log('1️⃣ Updating homepage...');
