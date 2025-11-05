@@ -15,6 +15,7 @@
     "test:permissions": "node test-permissions.js",
     "test:mysql": "node server-mysql-test.js",
     "test:debug": "node server-debug.js",
+    "test:strapi": "node server-strapi-detailed.js",
     "install:mysql": "npm install mysql2 --save",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
