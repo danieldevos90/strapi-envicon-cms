@@ -40,6 +40,11 @@
     "populate:content": "node populate-everything-complete.js",
     "populate:rtf": "node populate-everything-complete.js",
     "populate:everything": "node populate-everything-complete.js",
+    "cleanup:content": "node cleanup-and-fix-content.js",
+    "fix:everything": "node cleanup-and-fix-content.js",
+    "publish:all": "node publish-all-content.js",
+    "remove:duplicates": "node remove-all-duplicates.js",
+    "fresh:start": "node delete-all-start-fresh.js",
     "setup:production": "npm run build && npm run fix:permissions && npm run populate:rtf",
     "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf"
   },
