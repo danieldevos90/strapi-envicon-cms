@@ -30,15 +30,15 @@ server.listen(port, () => {
   setTimeout(() => {
     console.log('\n=== Attempting to load Strapi ===');
     try {
-      const strapi = require('@strapi/strapi');
+      const Strapi = require('@strapi/strapi');
       console.log('✅ Strapi module loaded successfully');
       
       // Close our debug server
       server.close(() => {
         console.log('Debug server closed, starting Strapi...');
         
-        // Start Strapi
-        strapi().start().catch(err => {
+        // Start Strapi (v4/v5 syntax)
+        Strapi.createStrapi({ distDir: './dist' }).start().catch(err => {
           console.error('❌ Strapi start error:', err);
           process.exit(1);
         });

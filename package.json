@@ -11,6 +11,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
+    "check-env": "node check-env.js",
+    "generate-secrets": "node generate-secrets.js",
     "test": "node test-all.js",
     "test:simple": "node server-simple.js",
     "test:permissions": "node test-permissions.js",
