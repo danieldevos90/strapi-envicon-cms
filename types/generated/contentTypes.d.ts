@@ -529,6 +529,40 @@ export interface ApiFormsConfigFormsConfig extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGlobalSeoGlobalSeo extends Struct.SingleTypeSchema {
+  collectionName: 'seo_settings';
+  info: {
+    description: 'Global SEO configuration';
+    displayName: 'SEO Settings';
+    pluralName: 'global-seos';
+    singularName: 'global-seo';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    canonicalUrl: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    keywords: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-seo.global-seo'
+    > &
+      Schema.Attribute.Private;
+    pageDescription: Schema.Attribute.Text;
+    pageTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -649,40 +683,6 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSeoSettingsSeoSettings extends Struct.SingleTypeSchema {
-  collectionName: 'seo_settings';
-  info: {
-    description: 'Global SEO configuration';
-    displayName: 'SEO Settings';
-    pluralName: 'seo-settings-collection';
-    singularName: 'seo-settings';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    canonicalUrl: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    keywords: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::seo-settings.seo-settings'
-    > &
-      Schema.Attribute.Private;
-    pageDescription: Schema.Attribute.Text;
-    pageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -1268,11 +1268,11 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::footer.footer': ApiFooterFooter;
       'api::forms-config.forms-config': ApiFormsConfigFormsConfig;
+      'api::global-seo.global-seo': ApiGlobalSeoGlobalSeo;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::process-step.process-step': ApiProcessStepProcessStep;
       'api::sector.sector': ApiSectorSector;
-      'api::seo-settings.seo-settings': ApiSeoSettingsSeoSettings;
       'api::service.service': ApiServiceService;
       'api::solution.solution': ApiSolutionSolution;
       'plugin::content-releases.release': PluginContentReleasesRelease;
