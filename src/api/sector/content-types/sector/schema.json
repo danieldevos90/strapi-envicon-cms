@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "singularName": "sector",
+    "pluralName": "sectors",
+    "displayName": "Sector",
+    "description": "Industry sectors (Recycling, Bouw & industrie, Tijdelijke huisvesting)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "downloadUrl": {
+      "type": "string"
+    },
+    "downloadText": {
+      "type": "string",
+      "default": "Download brochure"
+    },
+    "brochure": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
+

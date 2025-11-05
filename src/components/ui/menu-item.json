@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_ui_menu_items",
+  "info": {
+    "displayName": "Menu Item",
+    "description": "Navigation menu item"
+  },
+  "options": {},
+  "attributes": {
+    "id": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+

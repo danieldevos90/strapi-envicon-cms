@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "forms_configs",
+  "info": {
+    "singularName": "forms-config",
+    "pluralName": "forms-configs",
+    "displayName": "Forms Configuration",
+    "description": "Configuration for quote, consultation and brochure forms"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quote": {
+      "type": "json"
+    },
+    "consultation": {
+      "type": "json"
+    },
+    "brochure": {
+      "type": "json"
+    }
+  }
+}
+

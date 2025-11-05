@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
+    "description": "Global footer configuration"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.logo"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "company": {
+      "type": "json"
+    },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.footer-section"
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.social-link"
+    }
+  }
+}
+
