@@ -37,8 +37,8 @@
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "fix:permissions": "node fix-all-production-permissions.js",
-    "populate:content": "node populate-complete-rtf-content.js",
-    "populate:rtf": "node populate-complete-rtf-content.js",
+    "populate:content": "node populate-simple-no-filters.js",
+    "populate:rtf": "node populate-simple-no-filters.js",
     "setup:production": "npm run build && npm run fix:permissions && npm run populate:rtf",
     "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf"
   },
