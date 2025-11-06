@@ -45,6 +45,8 @@
     "publish:all": "node publish-all-content.js",
     "remove:duplicates": "node remove-all-duplicates.js",
     "fresh:start": "node delete-all-start-fresh.js",
+    "create:all": "node create-and-publish-all.js",
+    "create:services": "node create-homepage-services.js",
     "setup:production": "npm run build && npm run fix:permissions && npm run populate:rtf",
     "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf"
   },
