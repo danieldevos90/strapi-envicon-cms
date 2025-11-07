@@ -1,0 +1,118 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "singularName": "sector",
+    "pluralName": "sectors",
+    "displayName": "Sectors",
+    "description": "Sector pages with complete content structure"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "category": {
+      "type": "string",
+      "default": "SECTOR"
+    },
+    
+    "sectorContent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sector.content-section"
+    },
+    
+    "sectorFeatures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sector.features-section"
+    },
+    
+    "sectorAccordions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sector.accordions-section"
+    },
+    
+    "textBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.text-block"
+    },
+    
+    "contentLabel": {
+      "type": "string"
+    },
+    "contentTitle": {
+      "type": "string"
+    },
+    "contentSubtitle": {
+      "type": "text"
+    },
+    
+    "featuresLabel": {
+      "type": "string"
+    },
+    "featuresTitle": {
+      "type": "string"
+    },
+    "featuresSubtitle": {
+      "type": "text"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.feature"
+    },
+    
+    "solutionsLabel": {
+      "type": "string"
+    },
+    "solutionsTitle": {
+      "type": "string"
+    },
+    "solutionsDescription": {
+      "type": "text"
+    },
+    "solutionsBlockNumber": {
+      "type": "integer"
+    },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
+    },
+    
+    "downloadUrl": {
+      "type": "string"
+    },
+    "downloadText": {
+      "type": "string"
+    }
+  }
+}
