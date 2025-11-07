@@ -4,10 +4,32 @@
 
 The Strapi upload plugin (`/admin/plugins/upload`) not working on Plesk is usually caused by:
 
-1. **File Permissions** - Uploads directory needs write permissions
-2. **Nginx Upload Limits** - File size restrictions
-3. **Strapi Body Parser Limits** - Request size limits
-4. **Missing Directory Structure** - Uploads folder not created
+1. **ModSecurity Blocking** - COMODO WAF blocking MongoDB operators (MOST COMMON)
+2. **File Permissions** - Uploads directory needs write permissions
+3. **Nginx Upload Limits** - File size restrictions
+4. **Strapi Body Parser Limits** - Request size limits
+5. **Missing Directory Structure** - Uploads folder not created
+
+---
+
+## ⚠️ IMPORTANT: ModSecurity Issue (Most Common)
+
+If you're getting **403 errors** when accessing `/upload/files`, this is likely ModSecurity blocking Strapi's query parameters.
+
+**See:** `FIX_MODSECURITY.md` for detailed instructions.
+
+**Quick Fix:**
+1. Go to **Plesk** → **Domains** → **cms.envicon.nl** → **Apache & nginx Settings**
+2. Click **Additional directives for httpd.conf**
+3. Add:
+```apache
+<IfModule mod_security2.c>
+    <LocationMatch "^/(upload|api)">
+        SecRuleRemoveById 211760
+    </LocationMatch>
+</IfModule>
+```
+4. Restart Apache
 
 ---
 
