@@ -253,69 +253,31 @@ async function populateSector(slug, data) {
       ...(data.sectorAccordions.imageAlt && { imageAlt: data.sectorAccordions.imageAlt })
     };
     
-    // Update sector in steps to avoid validation errors
+    // Update sector with all components together (required for nested repeatable components in Strapi v5)
     console.log(`🔄 Updating sector...`);
     try {
-      // Step 1: Update root-level fields
-      const rootUpdate = {
+      const fullUpdate = {
         data: {
           description: firstParagraph,
-          contentTitle: data.intro.title
-        }
-      };
-      const rootResponse = await axios.put(`${API_URL}/sectors/${documentId}`, rootUpdate);
-      if (rootResponse.data?.error) {
-        throw new Error(rootResponse.data.error.message || 'Root update failed');
-      }
-      console.log(`  ✅ Root fields updated`);
-      
-      // Step 2: Update sectorContent
-      const contentUpdate = {
-        data: {
-          sectorContent: sectorContentData
-        }
-      };
-      try {
-        const contentResponse = await axios.put(`${API_URL}/sectors/${documentId}`, contentUpdate);
-        if (contentResponse.data?.error) {
-          console.error(`  ❌ SectorContent error:`, contentResponse.data.error.message);
-          throw new Error(contentResponse.data.error.message || 'Content update failed');
-        }
-        console.log(`  ✅ SectorContent updated`);
-      } catch (contentError) {
-        if (contentError.response?.data?.error) {
-          console.error(`  ❌ SectorContent validation error:`, contentError.response.data.error.message);
-          console.error(`  📄 Details:`, JSON.stringify(contentError.response.data.error.details, null, 2));
-        }
-        throw contentError;
-      }
-      
-      // Step 3: Update sectorFeatures
-      const featuresUpdate = {
-        data: {
-          sectorFeatures: data.sectorFeatures
-        }
-      };
-      const featuresResponse = await axios.put(`${API_URL}/sectors/${documentId}`, featuresUpdate);
-      if (featuresResponse.data?.error) {
-        throw new Error(featuresResponse.data.error.message || 'Features update failed');
-      }
-      console.log(`  ✅ SectorFeatures updated`);
-      
-      // Step 4: Update sectorAccordions
-      const accordionsUpdate = {
-        data: {
+          contentTitle: data.intro.title,
+          sectorContent: sectorContentData,
+          sectorFeatures: data.sectorFeatures,
           sectorAccordions: sectorAccordionsData
         }
       };
-      const accordionsResponse = await axios.put(`${API_URL}/sectors/${documentId}`, accordionsUpdate);
-      if (accordionsResponse.data?.error) {
-        throw new Error(accordionsResponse.data.error.message || 'Accordions update failed');
-      }
-      console.log(`  ✅ SectorAccordions updated`);
       
-      console.log(`✅ All updates completed successfully!`);
+      const updateResponse = await axios.put(`${API_URL}/sectors/${documentId}`, fullUpdate);
+      if (updateResponse.data?.error) {
+        throw new Error(updateResponse.data.error.message || 'Update failed');
+      }
+      console.log(`✅ All components updated successfully!`);
     } catch (updateError) {
+      if (updateError.response?.data?.error) {
+        console.error(`  ❌ Update error:`, updateError.response.data.error.message);
+        if (updateError.response.data.error.details) {
+          console.error(`  📄 Details:`, JSON.stringify(updateError.response.data.error.details, null, 2));
+        }
+      }
       // Re-throw to be caught by outer catch
       throw updateError;
     }
