@@ -22,6 +22,16 @@
       "repeatable": false,
       "component": "sections.about"
     },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.intro"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.gallery"
+    },
     "solutions": {
       "type": "component",
       "repeatable": false,
