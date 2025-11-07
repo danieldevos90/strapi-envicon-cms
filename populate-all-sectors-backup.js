@@ -1,17 +1,5 @@
 /**
  * Populate All Sectors with Content from text.md
- * 
- * NOTE: Due to Strapi v5 REST API limitations with nested repeatable components,
- * features and accordions arrays may not be saved via REST API.
- * 
- * This script will:
- * ✅ Update sector titles, descriptions, and base component data
- * ⚠️ Attempt to update features/accordions (may require manual addition via Strapi admin)
- * 
- * To fully populate features/accordions:
- * 1. Run this script to update base content
- * 2. Manually add features/accordions via Strapi admin, OR
- * 3. Use the custom API endpoint at POST /api/sectors/populate-all (requires Strapi rebuild)
  */
 
 const axios = require('axios');
