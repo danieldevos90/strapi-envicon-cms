@@ -18,7 +18,9 @@
       "type": "text"
     },
     "features": {
-      "type": "json"
+      "type": "component",
+      "repeatable": true,
+      "component": "content.simple-text"
     },
     "image": {
       "type": "media",

@@ -11,7 +11,7 @@ module.exports = {
     {
       method: 'POST',
       path: '/sectors/populate-all',
-      handler: 'sector.populateAll',
+      handler: 'custom-sector.populateAll',
       config: {
         auth: false, // Set to true if you want to require authentication
       },
