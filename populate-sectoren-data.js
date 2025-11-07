@@ -26,10 +26,10 @@ const sampleSectorData = {
       description: "Als school wil je dat de lessen gewoon door kunnen blijven gaan. Daarom bouwen we snel en met zo min mogelijk overlast. Onze modulaire units en demontabele bouwsystemen zijn eenvoudig aan te passen als het aantal leerlingen verandert. We leveren ze gebruiksklaar op met verlichting, sanitair en garderobes.",
       additionalText: "De tijdelijke gebouwen kunnen wij realiseren volgens het Programma van Eisen Frisse Scholen (klasse B of C). Daarmee creëren we een gezonde, veilige en energiezuinige leeromgeving met:",
       features: [
-        { text: "Gebalanceerde ventilatie met CO₂-sturing" },
-        { text: "Veel daglicht en goed akoestisch comfort" },
-        { text: "Energiezuinige installaties" },
-        { text: "Een aangenaam binnenklimaat" }
+        "Gebalanceerde ventilatie met CO₂-sturing",
+        "Veel daglicht en goed akoestisch comfort",
+        "Energiezuinige installaties",
+        "Een aangenaam binnenklimaat"
       ],
       imageAlt: "Modulaire schoolgebouw unit"
     },
@@ -94,12 +94,26 @@ async function populateData() {
     const existingResponse = await axios.get(`${API_URL}/sectors?filters[slug]=onderwijs`);
     
     if (existingResponse.data.data && existingResponse.data.data.length > 0) {
-      // Update existing sector
-      const sectorId = existingResponse.data.data[0].id;
-      console.log(`🔄 Updating existing sector with ID: ${sectorId}`);
+      // Update existing sector using documentId (Strapi v5)
+      const sector = existingResponse.data.data[0];
+      const documentId = sector.documentId;
+      console.log(`🔄 Updating existing sector with documentId: ${documentId}`);
       
-      const updateResponse = await axios.put(`${API_URL}/sectors/${sectorId}`, sampleSectorData);
+      const updateResponse = await axios.put(`${API_URL}/sectors/${documentId}`, sampleSectorData);
       console.log('✅ Sector updated successfully!');
+      console.log('📋 Updated sector:', updateResponse.data.data.title);
+      
+      // Test the updated data
+      console.log('\n🧪 Testing updated sector...');
+      const testResponse = await axios.get(`${API_URL}/sectors?filters[slug]=onderwijs&populate[sectorContent]=*&populate[sectorFeatures]=*&populate[sectorAccordions]=*`);
+      
+      if (testResponse.data.data && testResponse.data.data.length > 0) {
+        const updatedSector = testResponse.data.data[0];
+        console.log('✅ Sector data verification:');
+        console.log('  - SectorContent:', updatedSector.sectorContent ? '✅ Available' : '❌ Missing');
+        console.log('  - SectorFeatures:', updatedSector.sectorFeatures ? '✅ Available' : '❌ Missing');
+        console.log('  - SectorAccordions:', updatedSector.sectorAccordions ? '✅ Available' : '❌ Missing');
+      }
       
     } else {
       // Create new sector
@@ -118,6 +132,7 @@ async function populateData() {
     console.log('   - Make sure Strapi is running');
     console.log('   - Ensure the content types have been built');
     console.log('   - Check if the API is accessible');
+    console.log('   - Verify component schemas are properly registered');
   }
 }
 
