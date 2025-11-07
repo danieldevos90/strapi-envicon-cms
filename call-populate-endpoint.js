@@ -4,9 +4,17 @@
  */
 
 const axios = require('axios');
+const https = require('https');
 
 const STRAPI_URL = process.env.STRAPI_URL || 'https://cms.envicon.nl';
 const API_URL = `${STRAPI_URL}/api`;
+
+// Create axios instance that ignores SSL certificate errors (for self-signed certs)
+const axiosInstance = axios.create({
+  httpsAgent: new https.Agent({
+    rejectUnauthorized: false // Allow self-signed certificates
+  })
+});
 
 console.log('🚀 Calling populate-all endpoint...');
 console.log('📡 Strapi URL:', STRAPI_URL);
@@ -15,7 +23,7 @@ async function populateAll() {
   try {
     console.log(`\n📞 POST ${API_URL}/sectors/populate-all`);
     
-    const response = await axios.post(`${API_URL}/sectors/populate-all`, {}, {
+    const response = await axiosInstance.post(`${API_URL}/sectors/populate-all`, {}, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -47,6 +55,11 @@ async function populateAll() {
         console.error('   2. Restart Strapi');
         console.error('   3. Then run this script again');
       }
+    } else if (error.code === 'CERT_HAS_EXPIRED' || error.message.includes('certificate')) {
+      console.error('❌ SSL Certificate Error:', error.message);
+      console.error('\n💡 The script has been updated to ignore SSL certificate errors.');
+      console.error('💡 If you still see this error, the endpoint might not be available.');
+      console.error('💡 Make sure Strapi is rebuilt and restarted.');
     } else {
       console.error('❌ Error:', error.message);
     }
