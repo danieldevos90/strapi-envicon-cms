@@ -16,7 +16,16 @@
     },
     "href": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "hasSubmenu": {
+      "type": "boolean",
+      "default": false
+    },
+    "submenuItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.submenu-item"
     }
   }
 }
