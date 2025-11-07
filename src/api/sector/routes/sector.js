@@ -8,8 +8,9 @@ const { createCoreRouter } = require('@strapi/strapi').factories;
 
 const defaultRouter = createCoreRouter('api::sector.sector');
 
-const customRoutes = {
+module.exports = {
   routes: [
+    ...defaultRouter.routes,
     {
       method: 'POST',
       path: '/sectors/populate-all',
@@ -18,13 +19,6 @@ const customRoutes = {
         auth: false,
       },
     },
-  ],
-};
-
-module.exports = {
-  routes: [
-    ...defaultRouter.routes,
-    ...customRoutes.routes,
   ],
 };
 
