@@ -96,6 +96,21 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::solution.solution"
+    },
+    "sectorContent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sector.content-section"
+    },
+    "sectorFeatures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sector.features-section"
+    },
+    "sectorAccordions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sector.accordions-section"
     }
   }
 }

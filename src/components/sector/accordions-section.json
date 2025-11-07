@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sector_accordions_sections",
+  "info": {
+    "displayName": "Accordions Section",
+    "description": "Accordions with image for sectors"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "accordions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.accordion-item"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string"
+    }
+  }
+}
