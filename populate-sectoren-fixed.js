@@ -1,26 +1,19 @@
 /**
- * Populate Sectoren Sample Data
- * 
- * This script adds sample data for the new sectoren page structure
+ * Populate Sectoren Data - Fixed Version
+ * Uses proper component structure for Strapi v5
  */
 
 const axios = require('axios');
 
-const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+const STRAPI_URL = process.env.STRAPI_URL || 'https://cms.envicon.nl';
 const API_URL = `${STRAPI_URL}/api`;
 
 console.log('🚀 Populating sectoren sample data...');
 console.log('📡 Strapi URL:', STRAPI_URL);
 
-// Sample data for Onderwijs sector
+// Complete sample data with proper component structure
 const sampleSectorData = {
   data: {
-    title: "Onderwijs",
-    slug: "onderwijs", 
-    description: "Tijdelijke onderwijshuisvesting voor scholen en educatieve instellingen",
-    category: "SECTOR",
-    order: 1,
-    
     sectorContent: {
       title: "Snel een oplossing voor jouw schoolgebouw",
       description: "Als school wil je dat de lessen gewoon door kunnen blijven gaan. Daarom bouwen we snel en met zo min mogelijk overlast. Onze modulaire units en demontabele bouwsystemen zijn eenvoudig aan te passen als het aantal leerlingen verandert. We leveren ze gebruiksklaar op met verlichting, sanitair en garderobes.",
@@ -88,51 +81,70 @@ const sampleSectorData = {
 
 async function populateData() {
   try {
-    console.log('\n📝 Creating/updating Onderwijs sector...');
+    console.log('\n📝 Finding Onderwijs sector...');
     
-    // First, try to find existing sector
+    // Get existing sector
     const existingResponse = await axios.get(`${API_URL}/sectors?filters[slug]=onderwijs`);
     
-    if (existingResponse.data.data && existingResponse.data.data.length > 0) {
-      // Update existing sector using documentId (Strapi v5)
-      const sector = existingResponse.data.data[0];
-      const documentId = sector.documentId;
-      console.log(`🔄 Updating existing sector with documentId: ${documentId}`);
-      
-      const updateResponse = await axios.put(`${API_URL}/sectors/${documentId}`, sampleSectorData);
-      console.log('✅ Sector updated successfully!');
-      console.log('📋 Updated sector:', updateResponse.data.data.title);
-      
-      // Test the updated data
-      console.log('\n🧪 Testing updated sector...');
-      const testResponse = await axios.get(`${API_URL}/sectors?filters[slug]=onderwijs&populate[sectorContent]=*&populate[sectorFeatures]=*&populate[sectorAccordions]=*`);
-      
-      if (testResponse.data.data && testResponse.data.data.length > 0) {
-        const updatedSector = testResponse.data.data[0];
-        console.log('✅ Sector data verification:');
-        console.log('  - SectorContent:', updatedSector.sectorContent ? '✅ Available' : '❌ Missing');
-        console.log('  - SectorFeatures:', updatedSector.sectorFeatures ? '✅ Available' : '❌ Missing');
-        console.log('  - SectorAccordions:', updatedSector.sectorAccordions ? '✅ Available' : '❌ Missing');
-      }
-      
-    } else {
-      // Create new sector
-      console.log('➕ Creating new sector...');
-      
-      const createResponse = await axios.post(`${API_URL}/sectors`, sampleSectorData);
-      console.log('✅ Sector created successfully!');
+    if (!existingResponse.data.data || existingResponse.data.data.length === 0) {
+      console.log('❌ Onderwijs sector not found');
+      return;
     }
     
-    console.log('\n🎉 Sample data population complete!');
-    console.log('💡 You can now test the sectoren page with dynamic content.');
+    const sector = existingResponse.data.data[0];
+    const documentId = sector.documentId;
+    console.log(`✅ Found sector: ${sector.title} (${documentId})`);
+    
+    // Update sector with all new components
+    console.log('\n🔄 Updating sector with new component data...');
+    const updateResponse = await axios.put(`${API_URL}/sectors/${documentId}`, sampleSectorData);
+    
+    console.log('✅ Sector updated successfully!');
+    console.log('📋 Updated:', updateResponse.data.data.title);
+    
+    // Verify the update
+    console.log('\n🧪 Verifying updated data...');
+    const verifyResponse = await axios.get(`${API_URL}/sectors?filters[slug]=onderwijs&populate[sectorContent][populate]=*&populate[sectorFeatures][populate]=*&populate[sectorAccordions][populate]=*`);
+    
+    if (verifyResponse.data.data && verifyResponse.data.data.length > 0) {
+      const updatedSector = verifyResponse.data.data[0];
+      console.log('\n✅ Verification Results:');
+      console.log('  - SectorContent:', updatedSector.sectorContent ? '✅ Available' : '❌ Missing');
+      if (updatedSector.sectorContent) {
+        console.log('    Title:', updatedSector.sectorContent.title);
+        console.log('    Features:', updatedSector.sectorContent.features?.length || 0, 'items');
+      }
+      
+      console.log('  - SectorFeatures:', updatedSector.sectorFeatures ? '✅ Available' : '❌ Missing');
+      if (updatedSector.sectorFeatures) {
+        console.log('    Title:', updatedSector.sectorFeatures.title);
+        console.log('    Features:', updatedSector.sectorFeatures.features?.length || 0, 'items');
+      }
+      
+      console.log('  - SectorAccordions:', updatedSector.sectorAccordions ? '✅ Available' : '❌ Missing');
+      if (updatedSector.sectorAccordions) {
+        console.log('    Title:', updatedSector.sectorAccordions.title);
+        console.log('    Accordions:', updatedSector.sectorAccordions.accordions?.length || 0, 'items');
+      }
+    }
+    
+    console.log('\n🎉 Population complete!');
+    console.log('💡 The sectoren page should now display dynamic content!');
     
   } catch (error) {
-    console.error('❌ Error populating data:', error.response?.data || error.message);
-    console.log('\n🔧 Troubleshooting:');
-    console.log('   - Make sure Strapi is running');
-    console.log('   - Ensure the content types have been built');
-    console.log('   - Check if the API is accessible');
-    console.log('   - Verify component schemas are properly registered');
+    console.error('\n❌ Error:', error.response?.data?.error?.message || error.message);
+    
+    if (error.response?.data?.error?.details) {
+      console.log('\n📄 Error Details:');
+      console.log(JSON.stringify(error.response.data.error.details, null, 2));
+    }
+    
+    if (error.response?.data?.error?.errors) {
+      console.log('\n📄 Validation Errors:');
+      error.response.data.error.errors.forEach((err, index) => {
+        console.log(`  ${index + 1}. ${err.path.join('.')}: ${err.message}`);
+      });
+    }
   }
 }
 
