@@ -1,8 +1,78 @@
 # E-mail Template voor Hosting Provider (Nederlands)
 
-## Professionele E-mail Template
+## Casual/Vriendelijke Versie (Aanbevolen)
 
-**Onderwerp:** ModSecurity blokkeert Strapi CMS API - verzoek om uitzondering
+**Onderwerp:** Hulp nodig: ModSecurity blokkeert Strapi CMS
+
+---
+
+**Beste [Naam],**
+
+Ik loop tegen een probleem aan met ModSecurity op onze server. Het blokkeert de upload functionaliteit van Strapi CMS op cms.envicon.nl.
+
+**Wat er gebeurt:**
+- Als ik probeer bestanden te uploaden in Strapi krijg ik 403 errors
+- ModSecurity regel 211760 blokkeert de API verzoeken
+- De regel ziet MongoDB query operators (`$and`, `$eq`) als SQL injection pogingen
+- Maar dit zijn gewoon standaard Strapi parameters die nodig zijn voor filtering
+
+**Foutmelding die ik zie:**
+```
+403 Forbidden
+ModSecurity: Access denied - Rule ID: 211760
+URI: /upload/files?filters[$and][0][folderPath][$eq]=/
+```
+
+**Wat ik nodig heb:**
+Ik heb hulp nodig om dit op te lossen. Kunnen jullie ModSecurity regel 211760 uitschakelen voor cms.envicon.nl? Of hebben jullie een andere oplossing?
+
+**Wat ik al geprobeerd heb:**
+- Ik heb gekeken in Plesk maar zie geen ModSecurity instellingen
+- WordPress werkt prima op dezelfde server (gebruikt deze operators niet)
+- Het probleem zit specifiek bij Strapi CMS
+
+**Domein:** cms.envicon.nl
+
+Zouden jullie dit kunnen oplossen? Of kunnen jullie me vertellen wat de beste aanpak is?
+
+Alvast bedankt!
+
+Groeten,  
+[Uw naam]  
+[Uw e-mail/telefoon]
+
+---
+
+## Nog Casualer Versie
+
+**Onderwerp:** Probleem met Strapi CMS upload
+
+---
+
+Hoi [Naam],
+
+Ik heb een probleem met Strapi CMS op cms.envicon.nl. De upload functionaliteit werkt niet omdat ModSecurity de API verzoeken blokkeert.
+
+De foutmelding is:
+- 403 Forbidden
+- ModSecurity regel 211760
+- Het blokkeert MongoDB operators die Strapi gebruikt (`$and`, `$eq`)
+
+WordPress werkt gewoon prima, dus het probleem zit specifiek bij Strapi.
+
+Kunnen jullie dit oplossen? Ik zie geen ModSecurity instellingen in Plesk, dus ik heb jullie hulp nodig.
+
+Domein: cms.envicon.nl
+
+Wat is de beste oplossing hiervoor?
+
+Bedankt!
+
+[Uw naam]
+
+---
+
+## Professionele Versie (Origineel)
 
 ---
 
