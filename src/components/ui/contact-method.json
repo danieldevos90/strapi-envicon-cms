@@ -2,15 +2,16 @@
   "collectionName": "components_ui_contact_methods",
   "info": {
     "displayName": "Contact Method",
-    "description": "Contact method with icon, title and value"
+    "description": "Contact method with type, label, value and icon"
   },
   "options": {},
   "attributes": {
-    "icon": {
-      "type": "string",
+    "type": {
+      "type": "enumeration",
+      "enum": ["phone", "email", "address"],
       "required": true
     },
-    "title": {
+    "label": {
       "type": "string",
       "required": true
     },
@@ -18,9 +19,9 @@
       "type": "string",
       "required": true
     },
-    "href": {
+    "icon": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }
