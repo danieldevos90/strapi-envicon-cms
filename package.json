@@ -67,7 +67,9 @@
     "fix:routes": "node fix-sector-routes.js",
     "fix:routes-build": "node fix-sector-routes.js && npm run build && npm run restart",
     "disable:sector": "node disable-sector-routes.js",
-    "disable:sector-build": "node disable-sector-routes.js && npm run build && npm run restart"
+    "disable:sector-build": "node disable-sector-routes.js && npm run build && npm run restart",
+    "reset:homepage": "node reset-homepage-data.js",
+    "reset:homepage-mysql": "node reset-homepage-mysql.js"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
