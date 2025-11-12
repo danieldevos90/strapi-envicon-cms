@@ -7,7 +7,9 @@
   "options": {},
   "attributes": {
     "icon": {
-      "type": "string"
+      "type": "enumeration",
+      "enum": ["check", "settings", "volume2", "building", "shield", "clock", "star", "heart"],
+      "required": false
     },
     "title": {
       "type": "string",
