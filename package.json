@@ -52,7 +52,9 @@
     "populate:all:sectoren": "node call-populate-endpoint.js",
     "setup:sectoren": "npm run build && npm run populate:sectoren",
     "setup:production": "npm run build && npm run fix:permissions && npm run populate:rtf",
-    "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf && npm run populate:sectoren"
+    "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf && npm run populate:sectoren",
+    "fix:homepage-500": "node fix-homepage-500.js",
+    "fix:500": "node fix-homepage-500.js"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
