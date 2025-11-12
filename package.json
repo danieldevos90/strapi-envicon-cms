@@ -61,7 +61,9 @@
     "check:schema": "node fix-component-registration.js",
     "debug:500": "node debug-500-error.js",
     "clear:cache": "node clear-cache-rebuild.js",
-    "fresh:build": "node clear-cache-rebuild.js && npm run build && npm run restart"
+    "fresh:build": "node clear-cache-rebuild.js && npm run build && npm run restart",
+    "fix:sector": "node fix-sector-schema.js",
+    "fix:sector-build": "node fix-sector-schema.js && npm run build && npm run restart"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
