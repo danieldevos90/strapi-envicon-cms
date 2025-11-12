@@ -71,7 +71,9 @@
     "reset:homepage": "node reset-homepage-data.js",
     "reset:homepage-mysql": "node reset-homepage-mysql.js",
     "fix:loading": "node fix-sector-loading.js",
-    "fix:loading-build": "node fix-sector-loading.js && npm run build && npm run restart"
+    "fix:loading-build": "node fix-sector-loading.js && npm run build && npm run restart",
+    "fix:sector-final": "node fix-sector-routes-final.js",
+    "fix:sector-final-build": "node fix-sector-routes-final.js && npm run build && npm run restart"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
