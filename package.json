@@ -65,7 +65,9 @@
     "fix:sector": "node fix-sector-schema.js",
     "fix:sector-build": "node fix-sector-schema.js && npm run build && npm run restart",
     "fix:routes": "node fix-sector-routes.js",
-    "fix:routes-build": "node fix-sector-routes.js && npm run build && npm run restart"
+    "fix:routes-build": "node fix-sector-routes.js && npm run build && npm run restart",
+    "disable:sector": "node disable-sector-routes.js",
+    "disable:sector-build": "node disable-sector-routes.js && npm run build && npm run restart"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
