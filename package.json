@@ -72,8 +72,10 @@
     "reset:homepage-mysql": "node reset-homepage-mysql.js",
     "fix:loading": "node fix-sector-loading.js",
     "fix:loading-build": "node fix-sector-loading.js && npm run build && npm run restart",
+    "test:scripts": "node test-scripts.js",
     "fix:sector-final": "node fix-sector-routes-final.js",
-    "fix:sector-final-build": "node fix-sector-routes-final.js && echo '\n⏱️  Starting build (this will take 30-40 seconds)...\n' && npm run build && echo '\n⏱️  Starting restart (this will take 5-10 seconds)...\n' && npm run restart"
+    "fix:sector-final-build": "node fix-sector-routes-final.js && echo '\n⏱️  Starting build (this will take 30-40 seconds)...\n' && npm run build && echo '\n⏱️  Starting restart (this will take 5-10 seconds)...\n' && npm run restart",
+    "quick:fix": "echo 'Fixing sector routes...' && node -e \"const fs=require('fs');const p='src/api/sector/routes/sector.js';fs.existsSync(p+'.backup')||fs.writeFileSync(p+'.backup',fs.readFileSync(p,'utf8'));fs.writeFileSync(p,\\\"'use strict';const {createCoreRouter}=require('@strapi/strapi').factories;module.exports=createCoreRouter('api::sector.sector');\\\"');console.log('✅ Routes fixed');\" && npm run build && npm run restart"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
