@@ -8,12 +8,13 @@ export default [
   'strapi::cors',
   'strapi::poweredBy',
   // Custom middleware to sanitize query parameters
-  {
-    name: 'global::query-sanitizer',
-    config: {
-      enabled: true,
-    },
-  },
+  // Temporarily disabled - middleware file needs to be fixed
+  // {
+  //   name: 'global::query-sanitizer',
+  //   config: {
+  //     enabled: true,
+  //   },
+  // },
   'strapi::query',
   {
     name: 'strapi::body',
