@@ -96,3 +96,7 @@ You only need to upload to Strapi if you want to:
 
 The gray placeholders appear because image fields in Strapi are null, but the actual images exist in `/public` and can be referenced directly in the code or uploaded to Strapi later through the admin panel.
 
+
+
+
+

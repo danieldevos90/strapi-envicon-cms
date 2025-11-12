@@ -77,3 +77,7 @@ echo "  2. Test the frontend by running: npm run dev"
 echo "  3. Check that images appear correctly"
 echo ""
 
+
+
+
+

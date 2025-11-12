@@ -255,3 +255,7 @@ If content types are still not showing after following these steps:
    - Strapi logs
    - Node and NPM versions: `node -v && npm -v`
 
+
+
+
+

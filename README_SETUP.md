@@ -60,3 +60,7 @@ Check the troubleshooting section in SETUP_GUIDE.md
 
 **Ready?** Just run `./complete-setup.sh`! 🎉
 
+
+
+
+

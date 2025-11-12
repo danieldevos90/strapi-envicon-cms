@@ -220,3 +220,7 @@ If you're still having issues after trying both fixes:
 
 The fix copies the missing controller, route, and service JavaScript files to the dist folder so Strapi can properly register all content types in production mode.
 
+
+
+
+

@@ -95,3 +95,7 @@ DATABASE_SSL=false
 - **Exit 0**: All required variables are set ✅
 - **Exit 1**: Some required variables are missing ❌
 
+
+
+
+

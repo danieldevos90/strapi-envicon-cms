@@ -11,3 +11,7 @@ const strapi = require('@strapi/strapi');
 
 // Start Strapi with the correct syntax
 strapi.createStrapi({ distDir: './dist' }).start();
+
+
+
+

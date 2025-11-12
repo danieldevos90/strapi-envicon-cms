@@ -93,3 +93,7 @@ echo ""
 echo "✅ Setup script complete!"
 echo "   Now restart Strapi for changes to take effect"
 
+
+
+
+
