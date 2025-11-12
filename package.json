@@ -47,8 +47,12 @@
     "fresh:start": "node delete-all-start-fresh.js",
     "create:all": "node create-and-publish-all.js",
     "create:services": "node create-homepage-services.js",
+    "populate:sectoren": "node populate-sectoren-fixed.js",
+    "populate:all": "node call-populate-endpoint.js",
+    "populate:all:sectoren": "node call-populate-endpoint.js",
+    "setup:sectoren": "npm run build && npm run populate:sectoren",
     "setup:production": "npm run build && npm run fix:permissions && npm run populate:rtf",
-    "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf"
+    "deploy:complete": "npm run build && npm run fix:permissions && npm run populate:rtf && npm run populate:sectoren"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
