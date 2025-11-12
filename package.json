@@ -73,7 +73,7 @@
     "fix:loading": "node fix-sector-loading.js",
     "fix:loading-build": "node fix-sector-loading.js && npm run build && npm run restart",
     "fix:sector-final": "node fix-sector-routes-final.js",
-    "fix:sector-final-build": "node fix-sector-routes-final.js && npm run build && npm run restart"
+    "fix:sector-final-build": "node fix-sector-routes-final.js && echo '\n⏱️  Starting build (this will take 30-40 seconds)...\n' && npm run build && echo '\n⏱️  Starting restart (this will take 5-10 seconds)...\n' && npm run restart"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
