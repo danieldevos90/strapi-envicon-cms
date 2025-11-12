@@ -58,7 +58,8 @@
     "emergency:fix": "node emergency-fix-homepage.js",
     "emergency:homepage": "node emergency-fix-homepage.js && npm run build && npm run restart",
     "debug:components": "node fix-component-registration.js",
-    "check:schema": "node fix-component-registration.js"
+    "check:schema": "node fix-component-registration.js",
+    "debug:500": "node debug-500-error.js"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.30.0",
