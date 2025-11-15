@@ -32,6 +32,11 @@
       "repeatable": false,
       "component": "sections.gallery"
     },
+    "darkTextComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.dark-text-component"
+    },
     "solutions": {
       "type": "component",
       "repeatable": false,
