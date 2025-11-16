@@ -65,6 +65,7 @@
     "debug:publish": "node debug-publish-action.js",
     "test:article:logs": "node test-article-full-logs.js",
     "test:article": "node test-article-full-logs.js",
+    "test:content": "node test-article-without-content.js",
     "fix:sector-routes": "node fix-sector-routes-now.js",
     "fix:rebuild": "bash fix-and-rebuild.sh",
     "clear:cache": "node clear-cache-rebuild.js",
