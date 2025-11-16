@@ -2,7 +2,7 @@
   "collectionName": "components_content_icon_features",
   "info": {
     "displayName": "Icon Feature",
-    "description": "Feature with Lucide icon"
+    "description": "Feature with icon - supports full Lucide icon library (e.g., 'lucide:Check', 'lucide:Building', or legacy enum values: 'check', 'settings', etc.)"
   },
   "options": {},
   "attributes": {
@@ -15,22 +15,9 @@
       "required": true
     },
     "icon": {
-      "type": "enumeration",
-      "enum": [
-        "check",
-        "settings", 
-        "volume2",
-        "building",
-        "shield",
-        "clock",
-        "star",
-        "heart",
-        "zap",
-        "home",
-        "users",
-        "tool"
-      ],
-      "required": true
+      "type": "string",
+      "required": false,
+      "default": "check"
     }
   }
 }
