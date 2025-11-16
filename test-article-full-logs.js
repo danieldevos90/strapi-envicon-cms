@@ -11,7 +11,8 @@ const axios = require('axios');
 require('dotenv').config({ path: '.env' });
 
 const STRAPI_URL = process.env.STRAPI_URL || process.env.CMS_URL || 'https://cms.envicon.nl';
-const API_TOKEN = process.env.STRAPI_API_TOKEN || '';
+// Allow token from command line argument or environment variable
+const API_TOKEN = process.argv[2] || process.env.STRAPI_API_TOKEN || '';
 
 // Enable axios request/response logging
 const logAxiosRequest = (config) => {
@@ -102,9 +103,14 @@ async function testArticleCreation() {
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
   if (!API_TOKEN) {
-    console.error('❌ ERROR: STRAPI_API_TOKEN not found in .env');
-    console.error('   Please add your API token to .env file');
-    console.error('   Get token from: Strapi Admin → Settings → API Tokens\n');
+    console.error('❌ ERROR: API Token not provided');
+    console.error('');
+    console.error('Usage options:');
+    console.error('  1. Set in .env file: STRAPI_API_TOKEN=your_token');
+    console.error('  2. Pass as argument: npm run test:article:logs YOUR_TOKEN');
+    console.error('  3. Set environment variable: STRAPI_API_TOKEN=your_token npm run test:article:logs');
+    console.error('');
+    console.error('Get token from: Strapi Admin → Settings → API Tokens\n');
     process.exit(1);
   }
 
