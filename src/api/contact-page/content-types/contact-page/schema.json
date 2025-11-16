@@ -12,55 +12,35 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Contact"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
     "heroTitle": {
       "type": "string",
       "required": true,
       "default": "Neem contact op"
     },
-    "heroDescription": {
-      "type": "text",
+    "contactBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.contact-block",
       "required": true
     },
-    "benefits": {
+    "faq": {
       "type": "component",
-      "repeatable": true,
-      "component": "ui.feature"
+      "repeatable": false,
+      "component": "content.faq-section",
+      "required": false
     },
-    "contactInfoTitle": {
-      "type": "string",
-      "default": "Contactgegevens"
-    },
-    "companyName": {
-      "type": "string",
-      "default": "Envicon"
-    },
-    "phone": {
-      "type": "string",
-      "default": "+31 (0)85 273 67 54"
-    },
-    "email": {
-      "type": "string",
-      "default": "hallo@envicon.nl"
-    },
-    "address": {
-      "type": "string",
-      "default": "De Langeloop 20F, 1742 PB Schagen"
-    },
-    "faqTitle": {
-      "type": "string",
-      "default": "Veelgestelde vragen"
-    },
-    "faqItems": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.text-block"
-    },
-    "formTitle": {
-      "type": "string",
-      "default": "Contactformulier"
-    },
-    "formDescription": {
-      "type": "text"
+    "map": {
+      "type": "json",
+      "required": false
     },
     "metaTitle": {
       "type": "string",

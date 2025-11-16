@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_faq_entries",
+  "info": {
+    "displayName": "FAQ Entry",
+    "description": "FAQ item with title and description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+
