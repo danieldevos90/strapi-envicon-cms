@@ -30,7 +30,7 @@
       "default": "Envicon"
     },
     "publishedAt": {
-      "type": "date",
+      "type": "datetime",
       "required": false
     },
     "featuredImage": {
