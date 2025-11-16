@@ -44,7 +44,7 @@
       "default": "Projecten"
     },
     "content": {
-      "type": "json",
+      "type": "richtext",
       "required": true
     }
   }
