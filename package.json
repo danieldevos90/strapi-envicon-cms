@@ -67,6 +67,7 @@
     "test:article": "node test-article-full-logs.js",
     "test:content": "node test-article-without-content.js",
     "check:status": "node check-cms-status.js",
+    "test:richtext": "node test-richtext-formats.js",
     "fix:sector-routes": "node fix-sector-routes-now.js",
     "fix:rebuild": "bash fix-and-rebuild.sh",
     "clear:cache": "node clear-cache-rebuild.js",
