@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_solution_accordion_entries",
+  "info": {
+    "displayName": "Accordion Entry",
+    "description": "Single accordion entry with title and description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

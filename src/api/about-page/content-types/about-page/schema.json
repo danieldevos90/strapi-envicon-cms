@@ -1,71 +1,59 @@
 {
   "kind": "singleType",
-  "collectionName": "about_page",
+  "collectionName": "about_pages",
   "info": {
     "singularName": "about-page",
     "pluralName": "about-pages",
-    "displayName": "Over Ons Page",
-    "description": "Content for the About Us (Over ons) page"
+    "displayName": "About Page",
+    "description": "About page content"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "heroTitle": {
-      "type": "string",
-      "required": true,
-      "default": "Tijdelijke bouw, permanente kwaliteit"
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.centered-hero"
     },
-    "heroDescription": {
-      "type": "text",
-      "required": true
+    "ourStory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-text-right"
     },
-    "teamTitle": {
-      "type": "string",
-      "default": "Het team"
+    "quote": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.quote-section"
     },
-    "teamContent": {
-      "type": "text"
+    "team": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.team-section"
     },
-    "companyTitle": {
-      "type": "string",
-      "default": "Modulair bouwer in Nederland"
+    "modulairBouwer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-text-right"
     },
-    "companyContent": {
-      "type": "text"
+    "certificates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.certificates-section"
     },
-    "certificationsTitle": {
-      "type": "string",
-      "default": "Certificeringen & lidmaatschappen"
-    },
-    "certificationsContent": {
-      "type": "text"
-    },
-    "ctaTitle": {
-      "type": "string",
-      "default": "Op zoek naar een modulair bouwer in Nederland?"
-    },
-    "ctaButtonText": {
-      "type": "string",
-      "default": "Neem contact op"
-    },
-    "ctaButtonUrl": {
-      "type": "string",
-      "default": "/contact"
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
     },
     "metaTitle": {
       "type": "string",
-      "default": "Over ons – Envicon – Modulair bouwer"
+      "default": "Over Ons - Envicon"
     },
     "metaDescription": {
       "type": "text",
-      "default": "Als modulair bouwer in Nederland ontwikkelen wij tijdelijke huisvestingsoplossingen."
+      "default": "Leer meer over Envicon en onze missie om duurzame en flexibele bouwoplossingen te leveren."
     }
   }
 }
-
-
-
-
-

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_solution_intros",
+  "info": {
+    "displayName": "Solution Intro",
+    "description": "Intro section with title, description, and button"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": false
+    },
+    "buttonHref": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+

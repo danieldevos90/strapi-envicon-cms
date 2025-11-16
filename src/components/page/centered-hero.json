@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_centered_heroes",
+  "info": {
+    "displayName": "Centered Hero",
+    "description": "Centered hero section with title and background image"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "alt": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+

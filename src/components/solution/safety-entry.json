@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_solution_safety_entries",
+  "info": {
+    "displayName": "Safety Entry",
+    "description": "Single safety entry with image, title, and description"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

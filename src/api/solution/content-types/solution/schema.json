@@ -12,6 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
     "title": {
       "type": "string",
       "required": true
@@ -35,7 +40,51 @@
     "order": {
       "type": "integer",
       "default": 0
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.intro"
+    },
+    "personalSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.personal-section"
+    },
+    "sustainableSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.sustainable-section"
+    },
+    "solutionFeatures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.solution-features"
+    },
+    "solutionActivities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.solution-activities"
+    },
+    "safetySection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.safety-section"
+    },
+    "accordionSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.accordion-section"
     }
   }
 }
-

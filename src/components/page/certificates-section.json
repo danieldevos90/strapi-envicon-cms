@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_certificates_sections",
+  "info": {
+    "displayName": "Certificates Section",
+    "description": "Certificates logos section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "certificates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.certificate"
+    }
+  }
+}
+

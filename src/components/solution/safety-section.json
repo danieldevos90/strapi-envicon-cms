@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_solution_safety_sections",
+  "info": {
+    "displayName": "Safety Section",
+    "description": "Safety section with title and safety entries"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "entries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "solution.safety-entry"
+    }
+  }
+}
+

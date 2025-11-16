@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_team_sections",
+  "info": {
+    "displayName": "Team Section",
+    "description": "Team members section with title, description, and team member cards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "teamMembers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.team-member"
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_solution_solution_activities",
+  "info": {
+    "displayName": "Solution Activity",
+    "description": "Single solution activity entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

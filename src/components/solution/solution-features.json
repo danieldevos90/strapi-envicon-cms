@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_solution_solution_features_sections",
+  "info": {
+    "displayName": "Solution Features",
+    "description": "Solution features section with title, image, and feature entries"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "solution.solution-feature"
+    }
+  }
+}
+

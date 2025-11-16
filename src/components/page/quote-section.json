@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_quote_sections",
+  "info": {
+    "displayName": "Quote Section",
+    "description": "Centered quote section"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+
