@@ -60,6 +60,7 @@
     "debug:components": "node fix-component-registration.js",
     "check:schema": "node fix-component-registration.js",
     "debug:500": "node debug-500-error.js",
+    "debug:article": "node debug-article-500.js",
     "clear:cache": "node clear-cache-rebuild.js",
     "fresh:build": "node clear-cache-rebuild.js && npm run build && npm run restart",
     "fix:sector": "node fix-sector-schema.js",
