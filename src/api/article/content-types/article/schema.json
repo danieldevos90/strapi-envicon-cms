@@ -41,7 +41,7 @@
     },
     "content": {
       "type": "richtext",
-      "required": false
+      "required": true
     }
   }
 }
