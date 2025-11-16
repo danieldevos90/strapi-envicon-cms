@@ -62,6 +62,7 @@
     "debug:500": "node debug-500-error.js",
     "debug:article": "node debug-article-500.js",
     "debug:article-id": "node debug-specific-article.js",
+    "debug:article": "node debug-specific-article.js",
     "debug:publish": "node debug-publish-action.js",
     "clear:cache": "node clear-cache-rebuild.js",
     "fresh:build": "node clear-cache-rebuild.js && npm run build && npm run restart",
