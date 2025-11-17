@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": "About page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.centered-hero"
+    },
+    "ourStory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-text-right"
+    },
+    "quote": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.quote-section"
+    },
+    "team": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.team-section"
+    },
+    "modulairBouwer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-text-right"
+    },
+    "certificates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.certificates-section"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Over Ons - Envicon"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Leer meer over Envicon en onze missie om duurzame en flexibele bouwoplossingen te leveren."
+    }
+  }
+}

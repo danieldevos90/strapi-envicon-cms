@@ -1,0 +1,67 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_page",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Content for the Contact page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Contact"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Neem contact op"
+    },
+    "formTitle": {
+      "type": "string",
+      "required": false
+    },
+    "formDescription": {
+      "type": "text",
+      "required": false
+    },
+    "contactBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.contact-block",
+      "required": true
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.faq-section",
+      "required": false
+    },
+    "map": {
+      "type": "json",
+      "required": false
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Neem contact op | Envicon"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Heb je plannen voor tijdelijke bouw? Bel 085 273 67 54 of mail naar hallo@envicon.nl"
+    }
+  }
+}
+
+
+
+
+

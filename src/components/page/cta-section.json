@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_cta_sections",
+  "info": {
+    "displayName": "CTA Section",
+    "description": "Call-to-action section with title and button"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "buttonType": {
+      "type": "enumeration",
+      "enum": ["quote", "consultation", "brochure"],
+      "default": "quote"
+    }
+  }
+}
+

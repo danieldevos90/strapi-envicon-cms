@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_solution_solution_activities_sections",
+  "info": {
+    "displayName": "Solution Activities",
+    "description": "Solution activities section with title, description, and activity entries"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "activities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "solution.solution-activity"
+    }
+  }
+}
+

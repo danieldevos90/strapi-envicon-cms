@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sector_features_sections",
+  "info": {
+    "displayName": "Features Section",
+    "description": "Features grid with icons for sectors"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.icon-feature"
+    }
+  }
+}

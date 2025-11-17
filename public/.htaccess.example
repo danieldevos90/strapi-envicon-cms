@@ -1,0 +1,4 @@
+<IfModule mod_security2.c>
+    SecRuleRemoveById 211760
+</IfModule>
+

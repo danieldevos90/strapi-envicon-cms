@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_certificates",
+  "info": {
+    "displayName": "Certificate",
+    "description": "Single certificate logo"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "alt": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+

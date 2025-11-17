@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_footer_sections",
+  "info": {
+    "displayName": "Footer Section",
+    "description": "Footer section with links"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "json"
+    }
+  }
+}
+

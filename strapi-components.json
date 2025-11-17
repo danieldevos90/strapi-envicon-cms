@@ -1,0 +1,142 @@
+{
+  "components": {
+    "sector.content-section": {
+      "collectionName": "components_sector_content_sections",
+      "info": {
+        "displayName": "Content Section",
+        "description": "Image-text section for sectors"
+      },
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "additionalText": {
+          "type": "text"
+        },
+        "features": {
+          "type": "component",
+          "repeatable": true,
+          "component": "content.simple-text"
+        },
+        "image": {
+          "type": "media",
+          "multiple": false,
+          "allowedTypes": ["images"]
+        },
+        "imageAlt": {
+          "type": "string"
+        }
+      }
+    },
+    
+    "sector.features-section": {
+      "collectionName": "components_sector_features_sections",
+      "info": {
+        "displayName": "Features Section",
+        "description": "Features grid with icons for sectors"
+      },
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "features": {
+          "type": "component",
+          "repeatable": true,
+          "component": "content.icon-feature"
+        }
+      }
+    },
+    
+    "sector.accordions-section": {
+      "collectionName": "components_sector_accordions_sections",
+      "info": {
+        "displayName": "Accordions Section",
+        "description": "Accordions with image for sectors"
+      },
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "accordions": {
+          "type": "component",
+          "repeatable": true,
+          "component": "content.accordion-item"
+        },
+        "image": {
+          "type": "media",
+          "multiple": false,
+          "allowedTypes": ["images"]
+        },
+        "imageAlt": {
+          "type": "string"
+        }
+      }
+    },
+    
+    "content.simple-text": {
+      "collectionName": "components_content_simple_texts",
+      "info": {
+        "displayName": "Simple Text",
+        "description": "Simple text item"
+      },
+      "attributes": {
+        "text": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    
+    "content.icon-feature": {
+      "collectionName": "components_content_icon_features",
+      "info": {
+        "displayName": "Icon Feature",
+        "description": "Feature with icon"
+      },
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "icon": {
+          "type": "enumeration",
+          "enum": ["check", "settings", "volume2", "building", "shield", "clock", "star", "heart"],
+          "required": true
+        }
+      }
+    },
+    
+    "content.accordion-item": {
+      "collectionName": "components_content_accordion_items",
+      "info": {
+        "displayName": "Accordion Item",
+        "description": "Single accordion item"
+      },
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "content": {
+          "type": "text",
+          "required": true
+        }
+      }
+    }
+  }
+}

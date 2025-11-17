@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solutions",
+  "info": {
+    "singularName": "solution",
+    "pluralName": "solutions",
+    "displayName": "Solution",
+    "description": "Building solutions (Demontabel, Overkapping, Modulaire, Loods)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.intro"
+    },
+    "personalSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.personal-section"
+    },
+    "sustainableSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.sustainable-section"
+    },
+    "solutionFeatures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.solution-features"
+    },
+    "solutionActivities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.solution-activities"
+    },
+    "safetySection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.safety-section"
+    },
+    "accordionSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.accordion-section"
+    }
+  }
+}

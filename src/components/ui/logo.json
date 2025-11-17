@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_logos",
+  "info": {
+    "displayName": "Logo",
+    "description": "Logo component with src and alt text"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "type": "string",
+      "required": true
+    },
+    "alt": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+

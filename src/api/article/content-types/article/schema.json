@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": "Blog articles and news items"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "default": "Envicon"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "string",
+      "default": "Projecten"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "vimeoUrl": {
+      "type": "string",
+      "required": false
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "required": false
+    },
+    "imageGallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
+

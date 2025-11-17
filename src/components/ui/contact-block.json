@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_ui_contact_blocks",
+  "info": {
+    "displayName": "Contact Block",
+    "description": "Contact information block with title, address, phone, and email"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}
+

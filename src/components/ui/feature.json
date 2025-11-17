@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_ui_features",
+  "info": {
+    "displayName": "Feature",
+    "description": "Feature block with icon, title and description - supports full Lucide icon library (e.g., 'lucide:Check', 'lucide:Building', or legacy enum values: 'check', 'settings', etc.)"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": false,
+      "default": "check"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+
