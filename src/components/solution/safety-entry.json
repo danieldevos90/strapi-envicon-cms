@@ -2,10 +2,15 @@
   "collectionName": "components_solution_safety_entries",
   "info": {
     "displayName": "Safety Entry",
-    "description": "Single safety entry with image, title, and description"
+    "description": "Single safety entry with icon, image, title, and description. Icon supports Lucide icons (e.g., 'lucide:Shield', 'lucide:Check') or icon name (e.g., 'Shield', 'Check')"
   },
   "options": {},
   "attributes": {
+    "icon": {
+      "type": "string",
+      "required": false,
+      "default": "Shield"
+    },
     "image": {
       "type": "media",
       "multiple": false,
