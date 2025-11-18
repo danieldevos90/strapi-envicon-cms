@@ -27,6 +27,11 @@
       "repeatable": false,
       "component": "content.dark-text-component"
     },
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.gallery"
+    },
     "sectors": {
       "type": "component",
       "repeatable": false,

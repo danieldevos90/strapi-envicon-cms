@@ -33,6 +33,10 @@
     "imageAlt": {
       "type": "string",
       "required": false
+    },
+    "id": {
+      "type": "string",
+      "required": false
     }
   }
 }
