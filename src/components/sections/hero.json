@@ -2,7 +2,7 @@
   "collectionName": "components_sections_heroes",
   "info": {
     "displayName": "Hero Section",
-    "description": "Hero section with title, subtitle, description and carousel"
+    "description": "Hero section with title, subtitle, description, carousel images, and optional video"
   },
   "options": {},
   "attributes": {
@@ -18,11 +18,17 @@
       "type": "text",
       "required": true
     },
-    "carousel": {
-      "type": "json"
+    "carouselImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
     },
-    "videoUrl": {
-      "type": "string"
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos", "files"]
     },
     "buttons": {
       "type": "json"
