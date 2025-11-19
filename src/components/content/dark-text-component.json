@@ -34,7 +34,7 @@
       "type": "string",
       "required": false
     },
-    "id": {
+    "sectionId": {
       "type": "string",
       "required": false
     }
