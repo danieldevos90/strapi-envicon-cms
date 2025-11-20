@@ -21,12 +21,15 @@
       "type": "string"
     },
     "company": {
-      "type": "json"
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.company-info"
     },
     "sections": {
       "type": "component",
       "repeatable": true,
-      "component": "ui.footer-section"
+      "component": "ui.footer-section",
+      "description": "Footer columns (typically 3 columns, each with a title and menu items)"
     },
     "social": {
       "type": "component",

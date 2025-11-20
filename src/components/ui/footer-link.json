@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_ui_footer_links",
+  "info": {
+    "displayName": "Footer Link",
+    "description": "A menu item/link in a footer section (simplified menu-item structure for footer)"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": false
+    },
+    "identifier": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+
