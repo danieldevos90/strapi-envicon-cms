@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_news_intros",
+  "info": {
+    "displayName": "News Intro",
+    "description": "Intro section for news page with description and button"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": false
+    },
+    "buttonHref": {
+      "type": "string",
+      "required": false
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": ["white", "light", "gray"],
+      "default": "white",
+      "required": false
+    }
+  }
+}
+
