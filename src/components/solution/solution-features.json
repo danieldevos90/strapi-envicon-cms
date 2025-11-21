@@ -6,6 +6,10 @@
   },
   "options": {},
   "attributes": {
+    "tabbarTitle": {
+      "type": "string",
+      "required": false
+    },
     "title": {
       "type": "string",
       "required": true

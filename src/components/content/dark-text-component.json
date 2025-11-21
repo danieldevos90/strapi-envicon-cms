@@ -33,10 +33,6 @@
     "imageAlt": {
       "type": "string",
       "required": false
-    },
-    "sectionId": {
-      "type": "string",
-      "required": false
     }
   }
 }
