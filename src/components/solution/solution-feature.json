@@ -12,7 +12,8 @@
     },
     "headingTitle": {
       "type": "string",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "description": {
       "type": "text",
