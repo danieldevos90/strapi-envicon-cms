@@ -5,7 +5,7 @@
     "singularName": "service",
     "pluralName": "services",
     "displayName": "Service / Dienst",
-    "description": "Services for homepage accordions - only title and description are used"
+    "description": "Services for homepage accordions - title, description, and per-page CTA"
   },
   "options": {
     "draftAndPublish": true
@@ -23,7 +23,11 @@
     "order": {
       "type": "integer",
       "default": 0
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
     }
   }
 }
-

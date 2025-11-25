@@ -5,7 +5,7 @@
     "singularName": "footer",
     "pluralName": "footers",
     "displayName": "Footer",
-    "description": "Global footer configuration"
+    "description": "Global footer configuration with default CTA"
   },
   "options": {
     "draftAndPublish": false
@@ -35,7 +35,12 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.social-link"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section",
+      "description": "Default CTA shown in footer contact section. Can be overridden per page."
     }
   }
 }
-

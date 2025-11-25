@@ -35,19 +35,6 @@
       "required": false,
       "allowedTypes": ["images"]
     },
-    "downloadUrl": {
-      "type": "string"
-    },
-    "downloadText": {
-      "type": "string",
-      "default": "Download brochure"
-    },
-    "brochure": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["files"]
-    },
     "order": {
       "type": "integer",
       "default": 0
@@ -65,20 +52,6 @@
       "type": "component",
       "repeatable": true,
       "component": "content.text-block"
-    },
-    "featuresLabel": {
-      "type": "string"
-    },
-    "featuresTitle": {
-      "type": "string"
-    },
-    "featuresSubtitle": {
-      "type": "text"
-    },
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ui.feature"
     },
     "solutionsLabel": {
       "type": "string"
@@ -111,6 +84,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sector.accordions-section"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
     }
   }
 }
