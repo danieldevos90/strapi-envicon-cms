@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_pages",
+  "info": {
+    "singularName": "news-page",
+    "pluralName": "news-pages",
+    "displayName": "News Page",
+    "description": "Content for the News/Articles page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.centered-hero",
+      "required": false
+    },
+    "newsIntro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.news-intro",
+      "required": false
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Nieuws - Envicon"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Lees het laatste nieuws en artikelen van Envicon over modulair bouwen, projecten en innovaties in de bouw."
+    }
+  }
+}
+

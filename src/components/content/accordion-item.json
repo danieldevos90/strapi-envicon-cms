@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_content_accordion_items",
+  "info": {
+    "displayName": "Accordion Item",
+    "description": "Single accordion item with title and content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

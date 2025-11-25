@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_solution_sustainable_sections",
+  "info": {
+    "displayName": "Sustainable Section",
+    "description": "Sustainable section with title, image, description, and button"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": false
+    },
+    "buttonHref": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+

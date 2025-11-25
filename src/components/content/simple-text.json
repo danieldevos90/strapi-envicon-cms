@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_simple_texts",
+  "info": {
+    "displayName": "Simple Text",
+    "description": "Simple text item for lists"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

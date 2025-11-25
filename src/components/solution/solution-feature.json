@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_solution_solution_features",
+  "info": {
+    "displayName": "Solution Feature",
+    "description": "Single solution feature entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "headingTitle": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

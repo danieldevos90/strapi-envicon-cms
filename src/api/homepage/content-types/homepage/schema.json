@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": "Homepage content and sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.intro"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.gallery"
+    },
+    "darkTextComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.dark-text-component"
+    },
+    "sectors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.sectors-section"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.services-section"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.benefits-section"
+    }
+  }
+}
+

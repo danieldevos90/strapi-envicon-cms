@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_benefits_sections",
+  "info": {
+    "displayName": "Benefits Section",
+    "description": "Benefits section with title and benefit items"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text",
+      "required": false
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.feature"
+    }
+  }
+}
+

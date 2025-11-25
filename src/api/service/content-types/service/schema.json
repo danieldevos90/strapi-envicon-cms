@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service / Dienst",
+    "description": "Services for homepage accordions - title, description, and per-page CTA"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
+    }
+  }
+}

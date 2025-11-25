@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_page_image_text_rights",
+  "info": {
+    "displayName": "Image Text Right",
+    "description": "Section with text on left and image on right"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+

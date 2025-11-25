@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_social_links",
+  "info": {
+    "displayName": "Social Link",
+    "description": "Social media link"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+

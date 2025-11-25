@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_sections_intros",
+  "info": {
+    "displayName": "Intro Section",
+    "description": "Intro section with centered title, description, button and images"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "buttonText": {
+      "type": "string",
+      "required": false
+    },
+    "buttonHref": {
+      "type": "string",
+      "required": false
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAltTexts": {
+      "type": "json",
+      "required": false
+    }
+  }
+}
+

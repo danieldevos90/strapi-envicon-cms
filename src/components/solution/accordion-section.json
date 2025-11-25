@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_solution_accordion_sections",
+  "info": {
+    "displayName": "Accordion Section",
+    "description": "Accordion section with title and accordion entries"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "entries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "solution.accordion-entry"
+    }
+  }
+}
+

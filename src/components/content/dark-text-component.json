@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_content_dark_text_components",
+  "info": {
+    "name": "Dark Text Component",
+    "description": "Section with dark blue background on left, large image on right with diagonal cut",
+    "icon": "file",
+    "displayName": "Dark Text Component"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": false
+    },
+    "buttonHref": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+

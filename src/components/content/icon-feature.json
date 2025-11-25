@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_content_icon_features",
+  "info": {
+    "displayName": "Icon Feature",
+    "description": "Feature with icon - supports full Lucide icon library (e.g., 'lucide:Check', 'lucide:Building', or legacy enum values: 'check', 'settings', etc.)"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": false,
+      "default": "check"
+    }
+  }
+}
