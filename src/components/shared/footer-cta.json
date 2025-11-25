@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_footer_ctas",
+  "info": {
+    "displayName": "Footer CTA",
+    "description": "Per-page customizable footer call-to-action section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Klaar om te beginnen?"
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true,
+      "default": "Offerte aanvragen"
+    },
+    "buttonType": {
+      "type": "enumeration",
+      "enum": ["quote", "consultation", "link"],
+      "default": "quote"
+    },
+    "buttonHref": {
+      "type": "string",
+      "default": "/contact"
+    }
+  }
+}
+
