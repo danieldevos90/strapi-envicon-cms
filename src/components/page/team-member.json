@@ -23,6 +23,10 @@
     "imageAlt": {
       "type": "string",
       "required": false
+    },
+    "linkedinUrl": {
+      "type": "string",
+      "required": false
     }
   }
 }
