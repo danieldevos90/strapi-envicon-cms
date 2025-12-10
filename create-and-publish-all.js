@@ -188,27 +188,8 @@ async function main() {
       successCount++;
     }
 
-    // 4. Forms Config
-    console.log('\n4️⃣ Forms Config');
-    totalCount++;
-    const formsData = {
-      quote: {
-        title: "Offerte aanvragen",
-        description: "Vul het formulier in en ontvang binnen 24 uur een vrijblijvende offerte voor jouw project.",
-        benefits: ["Vrijblijvende offerte binnen 24 uur", "Persoonlijk advies op maat", "Transparante prijzen"]
-      },
-      consultation: {
-        title: "Adviesgesprek inplannen",
-        description: "Wil je meer weten over de mogelijkheden voor jouw project? Plan een vrijblijvend adviesgesprek in."
-      }
-    };
-    
-    if (await createAndPublish('/content-manager/single-types/api::forms-config.forms-config', formsData, 'Forms Config', token)) {
-      successCount++;
-    }
-
-    // 5. SEO Config
-    console.log('\n5️⃣ SEO Config');
+    // 4. SEO Config
+    console.log('\n4️⃣ SEO Config');
     totalCount++;
     const seoData = {
       title: "Envicon | Snel, duurzaam en zorgeloos bouwen in Nederland",
@@ -421,7 +402,6 @@ async function main() {
       '/api/contact-page', 
       '/api/navigation',
       '/api/footer',
-      '/api/forms-config',
       '/api/envicon-seo-config',
       '/api/services',
       '/api/sectors',

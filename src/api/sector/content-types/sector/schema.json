@@ -21,10 +21,6 @@
       "type": "string",
       "required": true
     },
-    "category": {
-      "type": "string",
-      "default": "SECTOR"
-    },
     "description": {
       "type": "text",
       "required": true
@@ -35,67 +31,9 @@
       "required": false,
       "allowedTypes": ["images"]
     },
-    "downloadUrl": {
-      "type": "string"
-    },
-    "downloadText": {
-      "type": "string",
-      "default": "Download brochure"
-    },
-    "brochure": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["files"]
-    },
     "order": {
       "type": "integer",
       "default": 0
-    },
-    "contentLabel": {
-      "type": "string"
-    },
-    "contentTitle": {
-      "type": "string"
-    },
-    "contentSubtitle": {
-      "type": "text"
-    },
-    "textBlocks": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.text-block"
-    },
-    "featuresLabel": {
-      "type": "string"
-    },
-    "featuresTitle": {
-      "type": "string"
-    },
-    "featuresSubtitle": {
-      "type": "text"
-    },
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ui.feature"
-    },
-    "solutionsLabel": {
-      "type": "string"
-    },
-    "solutionsTitle": {
-      "type": "string"
-    },
-    "solutionsDescription": {
-      "type": "text"
-    },
-    "solutionsBlockNumber": {
-      "type": "integer"
-    },
-    "solutions": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::solution.solution"
     },
     "sectorContent": {
       "type": "component",
@@ -111,6 +49,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sector.accordions-section"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
     }
   }
 }

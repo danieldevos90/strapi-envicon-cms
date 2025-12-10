@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_ui_company_infos",
+  "info": {
+    "displayName": "Company Info",
+    "description": "Company legal information displayed in footer"
+  },
+  "options": {},
+  "attributes": {
+    "kvk": {
+      "type": "string",
+      "required": false
+    },
+    "vat": {
+      "type": "string",
+      "required": false
+    },
+    "copyright": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

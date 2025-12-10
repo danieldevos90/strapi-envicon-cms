@@ -5,7 +5,7 @@
     "singularName": "footer",
     "pluralName": "footers",
     "displayName": "Footer",
-    "description": "Global footer configuration"
+    "description": "Global footer configuration with default CTA"
   },
   "options": {
     "draftAndPublish": false
@@ -17,22 +17,22 @@
       "repeatable": false,
       "component": "ui.logo"
     },
-    "tagline": {
-      "type": "string"
-    },
     "company": {
-      "type": "json"
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.company-info"
     },
     "sections": {
       "type": "component",
       "repeatable": true,
-      "component": "ui.footer-section"
+      "component": "ui.footer-section",
+      "description": "Footer columns (typically 3 columns, each with a title and menu items)"
     },
-    "social": {
+    "cta": {
       "type": "component",
-      "repeatable": true,
-      "component": "ui.social-link"
+      "repeatable": false,
+      "component": "page.cta-section",
+      "description": "Default CTA shown in footer contact section. Can be overridden per page."
     }
   }
 }
-

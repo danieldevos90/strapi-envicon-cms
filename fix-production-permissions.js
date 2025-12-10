@@ -199,16 +199,6 @@ async function fixPermissions(token) {
           }
         }
       },
-      'api::forms-config.forms-config': {
-        controllers: {
-          'forms-config': {
-            find: { enabled: true },
-            create: { enabled: false },
-            update: { enabled: false },
-            delete: { enabled: false }
-          }
-        }
-      },
       'api::envicon-seo-config.envicon-seo-config': {
         controllers: {
           'envicon-seo-config': {

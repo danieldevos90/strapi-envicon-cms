@@ -42,6 +42,20 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "vimeoUrl": {
+      "type": "string",
+      "required": false
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "required": false
+    },
+    "imageGallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }

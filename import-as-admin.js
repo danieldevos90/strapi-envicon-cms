@@ -234,18 +234,6 @@ async function main() {
       console.error('❌ Footer:', error.message);
     }
     
-    // Import Forms
-    console.log('📝 Importing Forms...');
-    try {
-      await adminAPI('/content-manager/single-types/api::forms-config.forms-config', 'PUT', {
-        ...contentMap.forms,
-        publishedAt: new Date().toISOString()
-      });
-      console.log('✅ Forms Config imported');
-    } catch (error) {
-      console.error('❌ Forms:', error.message);
-    }
-    
     // Import Homepage
     console.log('🏠 Importing Homepage...');
     try {

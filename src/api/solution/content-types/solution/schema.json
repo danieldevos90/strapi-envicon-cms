@@ -85,6 +85,11 @@
       "type": "component",
       "repeatable": false,
       "component": "solution.accordion-section"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
     }
   }
 }

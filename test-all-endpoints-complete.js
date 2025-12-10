@@ -73,7 +73,6 @@ async function testAllEndpoints() {
     { path: '/api/contact-page', name: 'Contact Page', type: 'single' },
     { path: '/api/navigation', name: 'Navigation', type: 'single' },
     { path: '/api/footer', name: 'Footer', type: 'single' },
-    { path: '/api/forms-config', name: 'Forms Config', type: 'single' },
     { path: '/api/envicon-seo-config', name: 'SEO Config', type: 'single' },
     
     // Collection types

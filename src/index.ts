@@ -86,7 +86,6 @@ export default {
           'api::homepage': ['find'],
           'api::navigation': ['find'],
           'api::footer': ['find'],
-          'api::forms-config': ['find'],
           'api::envicon-seo-config': ['find'],
           'api::about-page': ['find'],
           'api::contact-page': ['find'],

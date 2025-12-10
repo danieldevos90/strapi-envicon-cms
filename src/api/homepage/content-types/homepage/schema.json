@@ -17,11 +17,6 @@
       "repeatable": false,
       "component": "sections.hero"
     },
-    "about": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.about"
-    },
     "intro": {
       "type": "component",
       "repeatable": false,
@@ -37,25 +32,10 @@
       "repeatable": false,
       "component": "content.dark-text-component"
     },
-    "solutions": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.solutions-section"
-    },
-    "articles": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.articles-section"
-    },
     "sectors": {
       "type": "component",
       "repeatable": false,
       "component": "sections.sectors-section"
-    },
-    "process": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.process-section"
     },
     "services": {
       "type": "component",
@@ -67,10 +47,10 @@
       "repeatable": false,
       "component": "sections.benefits-section"
     },
-    "contact": {
+    "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.contact"
+      "component": "page.cta-section"
     }
   }
 }

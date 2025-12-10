@@ -26,14 +26,6 @@
       "required": true,
       "default": "Neem contact op"
     },
-    "formTitle": {
-      "type": "string",
-      "required": false
-    },
-    "formDescription": {
-      "type": "text",
-      "required": false
-    },
     "contactBlock": {
       "type": "component",
       "repeatable": false,
@@ -60,8 +52,3 @@
     }
   }
 }
-
-
-
-
-

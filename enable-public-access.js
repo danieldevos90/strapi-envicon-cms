@@ -56,7 +56,7 @@ async function main() {
   });
   
   // Enable single types (pages)
-  const singleTypes = ['homepage', 'navigation', 'footer', 'forms-config', 'envicon-seo-config', 'about-page', 'contact-page'];
+  const singleTypes = ['homepage', 'navigation', 'footer', 'envicon-seo-config', 'about-page', 'contact-page'];
   singleTypes.forEach(type => {
     const apiName = `api::${type}.${type}`;
     if (!permissions[apiName]) {

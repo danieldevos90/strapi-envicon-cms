@@ -130,15 +130,6 @@ async function importData() {
       console.log('✅ Footer imported');
     }
 
-    // Import forms config
-    console.log('\n📝 Importing Forms Configuration...');
-    const [formsRows] = await connection.execute('SELECT data FROM content WHERE section = ?', ['forms']);
-    if (formsRows.length > 0) {
-      const formsData = JSON.parse(formsRows[0].data);
-      await putToStrapi('/forms-config', formsData);
-      console.log('✅ Forms Configuration imported');
-    }
-
     // Import homepage sections
     console.log('\n🏠 Importing Homepage...');
     const [heroRows] = await connection.execute('SELECT data FROM content WHERE section = ?', ['hero']);

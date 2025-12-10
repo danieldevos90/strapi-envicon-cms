@@ -179,25 +179,6 @@ async function main() {
       successCount++;
     }
 
-    // Forms Config
-    totalCount++;
-    const formsData = {
-      quote: {
-        title: "Offerte aanvragen",
-        description: "Vul het formulier in en ontvang binnen 24 uur een vrijblijvende offerte voor jouw project.",
-        benefits: ["Vrijblijvende offerte binnen 24 uur", "Persoonlijk advies op maat", "Transparante prijzen"]
-      },
-      consultation: {
-        title: "Adviesgesprek inplannen",
-        description: "Wil je meer weten over de mogelijkheden voor jouw project? Plan een vrijblijvend adviesgesprek in met een van onze experts."
-      },
-      publishedAt: new Date().toISOString()
-    };
-    
-    if (await createContent('/content-manager/single-types/api::forms-config.forms-config', formsData, 'Forms Config', token)) {
-      successCount++;
-    }
-
     // SEO Config
     totalCount++;
     const seoData = {
@@ -431,7 +412,6 @@ async function main() {
       '/api/contact-page',
       '/api/navigation',
       '/api/footer',
-      '/api/forms-config',
       '/api/envicon-seo-config',
       '/api/services',
       '/api/sectors',

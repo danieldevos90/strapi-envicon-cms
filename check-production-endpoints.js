@@ -336,7 +336,6 @@ async function main() {
     { path: '/solutions', name: 'Solutions' },
     { path: '/navigation', name: 'Navigation' },
     { path: '/footer', name: 'Footer' },
-    { path: '/forms-config', name: 'Forms Config' },
     { path: '/envicon-seo-config', name: 'SEO Config' }
   ];
 

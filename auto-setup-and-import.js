@@ -233,17 +233,6 @@ async function main() {
     }
   }
   
-  // Import Forms
-  if (contentMap.forms) {
-    console.log('📝 Importing Forms...');
-    try {
-      await apiCall('/forms-config', 'PUT', contentMap.forms);
-      console.log('✅ Forms Config');
-    } catch (error) {
-      console.error('❌ Forms:', error.message);
-    }
-  }
-  
   // Import Homepage
   console.log('🏠 Importing Homepage...');
   try {

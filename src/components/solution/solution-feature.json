@@ -10,6 +10,11 @@
       "type": "string",
       "required": true
     },
+    "headingTitle": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
     "description": {
       "type": "text",
       "required": true

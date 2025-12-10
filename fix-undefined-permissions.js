@@ -126,8 +126,7 @@ async function fixUndefinedPermissions(token) {
     const singleTypes = [
       'api::homepage.homepage',
       'api::navigation.navigation',
-      'api::footer.footer', 
-      'api::forms-config.forms-config',
+      'api::footer.footer',
       'api::envicon-seo-config.envicon-seo-config',
       'api::about-page.about-page',
       'api::contact-page.contact-page'

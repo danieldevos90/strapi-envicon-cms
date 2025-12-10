@@ -636,37 +636,6 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiFormsConfigFormsConfig extends Struct.SingleTypeSchema {
-  collectionName: 'forms_configs';
-  info: {
-    description: 'Configuration for quote, consultation and brochure forms';
-    displayName: 'Forms Configuration';
-    pluralName: 'forms-configs';
-    singularName: 'forms-config';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    brochure: Schema.Attribute.JSON;
-    consultation: Schema.Attribute.JSON;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::forms-config.forms-config'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    quote: Schema.Attribute.JSON;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -816,22 +785,11 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    brochure: Schema.Attribute.Media<'files'>;
-    category: Schema.Attribute.String & Schema.Attribute.DefaultTo<'SECTOR'>;
-    contentLabel: Schema.Attribute.String;
-    contentSubtitle: Schema.Attribute.Text;
-    contentTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'page.cta-section', false>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
-    downloadText: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Download brochure'>;
-    downloadUrl: Schema.Attribute.String;
-    features: Schema.Attribute.Component<'ui.feature', true>;
-    featuresLabel: Schema.Attribute.String;
-    featuresSubtitle: Schema.Attribute.Text;
-    featuresTitle: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -841,16 +799,10 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
+    sectorAccordions: Schema.Attribute.Component<'sector.accordions-section', false>;
+    sectorContent: Schema.Attribute.Component<'sector.content-section', false>;
+    sectorFeatures: Schema.Attribute.Component<'sector.features-section', false>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    solutions: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::solution.solution'
-    >;
-    solutionsBlockNumber: Schema.Attribute.Integer;
-    solutionsDescription: Schema.Attribute.Text;
-    solutionsLabel: Schema.Attribute.String;
-    solutionsTitle: Schema.Attribute.String;
-    textBlocks: Schema.Attribute.Component<'content.text-block', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1471,7 +1423,6 @@ declare module '@strapi/strapi' {
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::envicon-seo-config.envicon-seo-config': ApiEnviconSeoConfigEnviconSeoConfig;
       'api::footer.footer': ApiFooterFooter;
-      'api::forms-config.forms-config': ApiFormsConfigFormsConfig;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::process-step.process-step': ApiProcessStepProcessStep;

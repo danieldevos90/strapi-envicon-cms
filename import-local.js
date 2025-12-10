@@ -258,17 +258,6 @@ async function importContentData(contentRows) {
     }
   }
   
-  // Import Forms Config
-  if (contentMap.forms) {
-    console.log('\n📝 Importing Forms Configuration...');
-    try {
-      await putToStrapi('/forms-config', contentMap.forms);
-      console.log('✅ Forms Configuration imported');
-    } catch (error) {
-      console.error('❌ Forms Configuration import failed:', error.message);
-    }
-  }
-  
   // Import Homepage
   console.log('\n🏠 Importing Homepage...');
   try {

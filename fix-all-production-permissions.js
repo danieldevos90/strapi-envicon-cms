@@ -197,16 +197,6 @@ async function setAllPermissions(token) {
           }
         }
       },
-      'api::forms-config.forms-config': {
-        controllers: {
-          'forms-config': {
-            find: { enabled: true },
-            create: { enabled: false },
-            update: { enabled: false },
-            delete: { enabled: false }
-          }
-        }
-      },
       'api::envicon-seo-config.envicon-seo-config': {
         controllers: {
           'envicon-seo-config': {
@@ -280,7 +270,6 @@ async function testAllEndpoints() {
     { path: '/api/solutions', name: 'Solutions' },
     { path: '/api/navigation', name: 'Navigation' },
     { path: '/api/footer', name: 'Footer' },
-    { path: '/api/forms-config', name: 'Forms Config' },
     { path: '/api/envicon-seo-config', name: 'SEO Config' }
   ];
   

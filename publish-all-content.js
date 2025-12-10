@@ -169,7 +169,6 @@ async function main() {
       { endpoint: 'api::contact-page.contact-page', name: 'Contact Page' },
       { endpoint: 'api::navigation.navigation', name: 'Navigation' },
       { endpoint: 'api::footer.footer', name: 'Footer' },
-      { endpoint: 'api::forms-config.forms-config', name: 'Forms Config' },
       { endpoint: 'api::envicon-seo-config.envicon-seo-config', name: 'SEO Config' }
     ];
     

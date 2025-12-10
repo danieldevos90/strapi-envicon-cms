@@ -550,7 +550,6 @@ async function testAllEndpoints() {
     { path: '/api/solutions', name: 'Solutions' },
     { path: '/api/navigation', name: 'Navigation' },
     { path: '/api/footer', name: 'Footer' },
-    { path: '/api/forms-config', name: 'Forms Config' },
     { path: '/api/envicon-seo-config', name: 'SEO Config' },
     { path: '/api/process-steps', name: 'Process Steps' }
   ];

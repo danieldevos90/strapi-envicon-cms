@@ -10,6 +10,12 @@
       "type": "string",
       "required": true
     },
+    "label": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
     "features": {
       "type": "component",
       "repeatable": true,

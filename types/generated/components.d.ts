@@ -12,53 +12,6 @@ export interface ContentTextBlock extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsAbout extends Struct.ComponentSchema {
-  collectionName: 'components_sections_abouts';
-  info: {
-    description: 'About section with features';
-    displayName: 'About Section';
-  };
-  attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    features: Schema.Attribute.Component<'ui.feature', true>;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface SectionsArticlesSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_articles_sections';
-  info: {
-    description: 'Articles section titles';
-    displayName: 'Articles Section';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    subtitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'NIEUWSBERICHTEN'>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Nieuws en projecten'>;
-  };
-}
-
-export interface SectionsContact extends Struct.ComponentSchema {
-  collectionName: 'components_sections_contacts';
-  info: {
-    description: 'Contact section with methods and map';
-    displayName: 'Contact Section';
-  };
-  attributes: {
-    buttons: Schema.Attribute.JSON;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    map: Schema.Attribute.JSON;
-    methods: Schema.Attribute.Component<'ui.contact-method', true>;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface SectionsHero extends Struct.ComponentSchema {
   collectionName: 'components_sections_heroes';
   info: {
@@ -72,19 +25,6 @@ export interface SectionsHero extends Struct.ComponentSchema {
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     videoUrl: Schema.Attribute.String;
-  };
-}
-
-export interface SectionsProcessSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_process_sections';
-  info: {
-    description: 'Process section with steps';
-    displayName: 'Process Section';
-  };
-  attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -122,23 +62,6 @@ export interface SectionsServicesSection extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsSolutionsSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_solutions_sections';
-  info: {
-    description: 'Solutions section titles';
-    displayName: 'Solutions Section';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    subtitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'OPLOSSINGEN'>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Welke oplossing past bij jouw project?'>;
-  };
-}
-
 export interface UiButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_buttons';
   info: {
@@ -152,6 +75,19 @@ export interface UiButton extends Struct.ComponentSchema {
     showOnDesktop: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     showOnMobile: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface UiCompanyInfo extends Struct.ComponentSchema {
+  collectionName: 'components_ui_company_infos';
+  info: {
+    description: 'Company legal information displayed in footer';
+    displayName: 'Company Info';
+  };
+  attributes: {
+    kvk: Schema.Attribute.String;
+    vat: Schema.Attribute.String;
+    copyright: Schema.Attribute.String;
   };
 }
 
@@ -219,37 +155,20 @@ export interface UiMenuItem extends Struct.ComponentSchema {
   };
 }
 
-export interface UiSocialLink extends Struct.ComponentSchema {
-  collectionName: 'components_ui_social_links';
-  info: {
-    description: 'Social media link';
-    displayName: 'Social Link';
-  };
-  attributes: {
-    icon: Schema.Attribute.String & Schema.Attribute.Required;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'content.text-block': ContentTextBlock;
-      'sections.about': SectionsAbout;
-      'sections.articles-section': SectionsArticlesSection;
-      'sections.contact': SectionsContact;
       'sections.hero': SectionsHero;
-      'sections.process-section': SectionsProcessSection;
       'sections.sectors-section': SectionsSectorsSection;
       'sections.services-section': SectionsServicesSection;
-      'sections.solutions-section': SectionsSolutionsSection;
       'ui.button': UiButton;
+      'ui.company-info': UiCompanyInfo;
       'ui.contact-method': UiContactMethod;
       'ui.feature': UiFeature;
       'ui.footer-section': UiFooterSection;
       'ui.logo': UiLogo;
       'ui.menu-item': UiMenuItem;
-      'ui.social-link': UiSocialLink;
     }
   }
 }

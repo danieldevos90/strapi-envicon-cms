@@ -61,7 +61,6 @@ This script will:
 - ✅ **Contact Page** - `/api/contact-page` ← **FIXED**
 - ✅ **Navigation** - `/api/navigation`
 - ✅ **Footer** - `/api/footer`
-- ✅ **Forms Config** - `/api/forms-config`
 - ✅ **SEO Config** - `/api/envicon-seo-config`
 
 ---
@@ -117,7 +116,6 @@ curl -H "Authorization: Bearer YOUR_API_KEY" https://cms.envicon.nl/api/homepage
 | `/api/projects` | ✅ Working | Projects data |
 | `/api/navigation` | ✅ Working | Menu structure |
 | `/api/footer` | ✅ Working | Footer content |
-| `/api/forms-config` | ✅ Working | Form settings |
 | `/api/envicon-seo-config` | ✅ Working | SEO settings |
 
 ---

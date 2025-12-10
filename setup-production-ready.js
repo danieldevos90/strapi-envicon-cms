@@ -99,7 +99,7 @@ async function setupPermissions() {
     
     // Single types - enable find only
     const singleTypes = [
-      'homepage', 'navigation', 'footer', 'forms-config', 
+      'homepage', 'navigation', 'footer',
       'envicon-seo-config', 'about-page', 'contact-page'
     ];
     
