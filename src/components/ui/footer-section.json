@@ -1,21 +1,17 @@
 {
   "collectionName": "components_ui_footer_sections",
   "info": {
-    "displayName": "Footer Column",
-    "description": "A footer column with a title and menu items (links). Create 3 columns for the footer."
+    "displayName": "Footer Section",
+    "description": "Footer section with links"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "description": "Column title (e.g., 'Sectoren', 'Envicon', 'Bouwen')"
+      "required": true
     },
     "links": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ui.footer-link",
-      "description": "Menu items (links) in this column"
+      "type": "json"
     }
   }
 }
