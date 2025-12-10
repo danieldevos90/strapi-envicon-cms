@@ -145,12 +145,30 @@ export interface UiLogo extends Struct.ComponentSchema {
 export interface UiMenuItem extends Struct.ComponentSchema {
   collectionName: 'components_ui_menu_items';
   info: {
-    description: 'Navigation menu item';
+    description: 'Navigation menu item with optional submenu support';
     displayName: 'Menu Item';
   };
   attributes: {
-    href: Schema.Attribute.String & Schema.Attribute.Required;
+    hasSubmenu: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    href: Schema.Attribute.String;
     identifier: Schema.Attribute.String & Schema.Attribute.Required;
+    submenuItems: Schema.Attribute.Component<'ui.submenu-item', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface UiSubmenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_ui_submenu_items';
+  info: {
+    description: 'Navigation submenu item with optional image';
+    displayName: 'Submenu Item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.String;
+    identifier: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -169,6 +187,7 @@ declare module '@strapi/strapi' {
       'ui.footer-section': UiFooterSection;
       'ui.logo': UiLogo;
       'ui.menu-item': UiMenuItem;
+      'ui.submenu-item': UiSubmenuItem;
     }
   }
 }
