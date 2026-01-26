@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "projects_pages",
+  "info": {
+    "singularName": "projects-page",
+    "pluralName": "projects-pages",
+    "displayName": "Projects Page",
+    "description": "Projects overview page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.centered-hero"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.intro"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cta-section"
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Projecten - Envicon"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Ontdek onze gerealiseerde projecten in verschillende sectoren. Van tijdelijke huisvesting tot modulaire bouwoplossingen."
+    }
+  }
+}
