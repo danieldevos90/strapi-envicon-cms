@@ -51,6 +51,14 @@
       "type": "component",
       "repeatable": false,
       "component": "page.cta-section"
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Envicon - Specialist in Modulair Bouwen"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Envicon is uw partner voor modulaire en duurzame bouwoplossingen. Snel, flexibel en hoogwaardig bouwen voor onderwijs, wonen en industrie."
     }
   }
 }

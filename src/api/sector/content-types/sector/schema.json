@@ -54,6 +54,12 @@
       "type": "component",
       "repeatable": false,
       "component": "page.cta-section"
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
     }
   }
 }

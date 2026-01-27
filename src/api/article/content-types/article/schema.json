@@ -56,6 +56,12 @@
       "multiple": true,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
     }
   }
 }
