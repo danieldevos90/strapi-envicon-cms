@@ -2,18 +2,20 @@
   "collectionName": "components_ui_logos",
   "info": {
     "displayName": "Logo",
-    "description": "Logo component with src and alt text"
+    "description": "Logo component with media upload and alt text"
   },
   "options": {},
   "attributes": {
-    "src": {
-      "type": "string",
-      "required": true
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     },
     "alt": {
       "type": "string",
-      "required": true
+      "required": false,
+      "description": "Alt text for accessibility (falls back to media alternativeText if empty)"
     }
   }
 }
-
