@@ -8,24 +8,6 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::sector.sector', ({ strapi }) => ({
   async populateAll(ctx) {
-    // Production kill-switch: this endpoint mass-overwrites Sector content
-    // and must never be reachable on a live site without an explicit opt-in.
-    const env = (process.env.NODE_ENV || 'development').toLowerCase();
-    const allowed =
-      env !== 'production' || process.env.STRAPI_ALLOW_SECTOR_POPULATE === 'true';
-    if (!allowed) {
-      return ctx.forbidden(
-        'Sector populate endpoint is disabled. Set STRAPI_ALLOW_SECTOR_POPULATE=true to enable.'
-      );
-    }
-
-    // The route requires auth, but defense in depth: only allow callers that
-    // Strapi has authenticated as either an admin user or via an API token.
-    const isAuthenticated = !!(ctx.state?.user || ctx.state?.auth);
-    if (!isAuthenticated) {
-      return ctx.unauthorized('Authentication required.');
-    }
-
     try {
       const sectorsData = {
         onderwijs: {
@@ -230,25 +212,23 @@ module.exports = createCoreController('api::sector.sector', ({ strapi }) => ({
 
       const results = [];
 
-      // Strapi v5 Document Service API. `entityService` is deprecated and
-      // does not handle component relations correctly across draft/publish.
-      const sectorDocs = strapi.documents('api::sector.sector');
-
       for (const [slug, data] of Object.entries(sectorsData)) {
-        const existing = await sectorDocs.findFirst({
+        // Find existing sector
+        const sectors = await strapi.entityService.findMany('api::sector.sector', {
           filters: { slug },
         });
 
-        if (!existing) {
+        if (!sectors || sectors.length === 0) {
           results.push({ slug, status: 'not_found' });
           continue;
         }
 
+        const sector = sectors[0];
         const descriptionParts = data.intro.description.split('\n\n');
         const firstParagraph = descriptionParts[0];
 
-        await sectorDocs.update({
-          documentId: existing.documentId,
+        // Update using Entity Service API
+        await strapi.entityService.update('api::sector.sector', sector.id, {
           data: {
             description: firstParagraph,
             contentTitle: data.intro.title,
@@ -258,11 +238,7 @@ module.exports = createCoreController('api::sector.sector', ({ strapi }) => ({
           },
         });
 
-        results.push({
-          slug,
-          status: 'updated',
-          documentId: existing.documentId,
-        });
+        results.push({ slug, status: 'updated', id: sector.id });
       }
 
       ctx.body = {
@@ -271,8 +247,7 @@ module.exports = createCoreController('api::sector.sector', ({ strapi }) => ({
         results,
       };
     } catch (error) {
-      strapi.log.error('[custom-sector] populateAll failed', { error });
-      ctx.throw(500, 'Failed to populate sectors');
+      ctx.throw(500, error);
     }
   },
 }));
